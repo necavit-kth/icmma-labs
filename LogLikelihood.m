@@ -20,10 +20,7 @@ P_choosen = P(CHOICEIDX);
 % Observe that we wan't to maximize the likelihood, but matlab only
 % provides minimization routines. Therefore you should write the negative
 % log-likelihood here.
-negLL = [];
-
-%LL=[]; % WRITE YOUR LOG-LIKELIHOOD FUNCTION HERE
-
+negLL = -sum(log(P_choosen));
 
 end
 
