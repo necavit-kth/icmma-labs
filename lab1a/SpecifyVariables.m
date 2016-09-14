@@ -134,6 +134,7 @@ I_DATA_RD.PT = Ipr_data;
 
 
 end
+
 function D = LoadData(filename)
 % LOADDATA Loads the dataset from filename
 %   D is a structure with the two fields 'Name' and 'Data'
@@ -185,6 +186,7 @@ end
 
 D = struct('Name',D_IDX_OUT,'Data',DATA_OUT);
 end
+
 function [CHOICE ,  CHOICEIDX] = CalculateChoice(D)
 % CALCULATECHOICE Calculates the vector of CHOICEIDX such that
 % P(CHOICEIDX(k)) is the probability of the observed choice for observation

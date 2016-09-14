@@ -8,7 +8,7 @@
 % Vivian Wang, 2012
 % Shiva Habibi, 2013 ; inspired by Matlab code to estimate a mixed logit model with maximum simulated likelihood
 % Written by Kenneth Train, August 9, 2006.
-% Oskar Västberg 2013
+% Oskar Vï¿½stberg 2013
 %-------------------------------------------------------
 global N_FX LAB_FX CHOICE
 % Load, selected and transform data from file 'rvu_data_workNH.csv'
@@ -73,8 +73,8 @@ beta_carcost = beta(I_Carcost);
 beta_PTtime = beta(I_PTtime);
 beta_PTcost = beta(I_PTcost);
 
-cVoT = []; %VoT for car
-pVoT = []; %VoT for PT
+cVoT = beta_cartime/beta_carcost; %VoT for car
+pVoT = beta_PTtime/beta_PTcost; %VoT for PT
 
 fprintf('\n\nValue of time (VoT) for car: %4.1f (SEK/h)', cVoT);   
 fprintf('\nValue of time (VoT) for public transit: %4.1f (SEK/h)', pVoT);
