@@ -31,7 +31,7 @@ P = [P_walk, P_bike, P_car, P_PT];
       function [V_walk, V_bike, V_car, V_PT] = Utilities(F, R)
             % Calculate the utilites for the different modes.
             % F is N_FX x 1 and contains the fixed parameters
-                        
+            
             V_walk = (VAR_FX(I_DATA_FX.walk,:)'*F(I_BETA_FX.walk))';
             V_bike = (VAR_FX(I_DATA_FX.bike,:)'*F(I_BETA_FX.bike))';
             V_car = (VAR_FX(I_DATA_FX.car,:)'*F(I_BETA_FX.car))';

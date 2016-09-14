@@ -27,7 +27,7 @@ beta_start = zeros(N_FX,1);
  [beta,fval,exitflag,output,grad,hessian]= fminunc(@LogLikelihood,beta_start,options); % '@' is a handle for the LogLikelihood below
  
  % Calculate t-values
- sigma=sqrt(diag(inv(hessian))); 
+ sigma=sqrt(diag(inv(hessian)));
  tvalues = beta./sigma; 
  
 %%%%%%%% Display Result  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
