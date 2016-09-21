@@ -1,5 +1,5 @@
 
-function SpecifyVariables
+function SpecifyVariables(fid)
 % CHOOSEVARIABLES structure and transforms the data in file 'filename' to a
 % more usable form. Here, is where you specify the variables to be included
 % in the model and whether they are fixed or random and whether thet are
@@ -74,8 +74,16 @@ car_data_fix = [ASC , cartime , carcost];
 car_name_fix = {'Car_ASC' , 'Car_time' , 'cost'};
 
 PT_data_fix = [PTtime ,  PTcost];
-PT_name_fix = {'PT_time' , 'cost' }; % Observe that in the current specification, PT and car has the same cost-parameter.
+PT_name_fix = {'PT_time' , 'cost' };
 
+
+fprintf(fid, '\n\n----------------- MODEL VARIABLES ---------------------');
+% Display the used variables in the model, specifying which are fixed and
+%  which are mixed (correlated in Mixed Logit)
+fprintf(fid, '\nWALK variables: %s', strjoin(walk_name_fix));
+fprintf(fid, '\nBIKE variables: %s', strjoin(bike_name_fix));
+fprintf(fid, '\nCAR  variables: %s', strjoin(car_name_fix));
+fprintf(fid, '\nPT   variables: %s', strjoin(PT_name_fix));
 
 % Specify when working with Mixed logit. Don't work for lab 1.
 walk_data_rd = [];
