@@ -43,9 +43,8 @@ SQRTNP = sqrt(NP);
 ASC = ones(NP,1);% ASC = alternative specific constant
 year=DATA(:,D_IDX.('year'));
 dist=DATA(:, D_IDX.('dist_OK_m'))/10000; %distance (10km)
-age = DATA(:,D_IDX.('age_grp04'));
-income = DATA(:, D_IDX.('hh_income_grp'));
 cons_cap = DATA(:, D_IDX.('cons_cap'));
+self_empl = DATA(:, D_IDX.('self_empl'));
 
 % Car
 cartime=(1 - DATA(:, D_IDX.caracc))*4 ...
@@ -66,17 +65,17 @@ PTtime = PTauxt + PTinvt + PTtotwt; % total travel time by public transport
 % Add more from the transformed variables above.
 %
 
-walk_data_fix = [ASC, dist];
-walk_name_fix = {'Walk_ASC', 'Walk_distance'};
+walk_data_fix = [ASC, dist, self_empl];
+walk_name_fix = {'Walk_ASC', 'Walk_distance', 'self_empl'};
 
-bike_data_fix = [ASC, dist, age, income];
-bike_name_fix = {'Bike_ASC', 'Bike_distance', 'age', 'income'};
+bike_data_fix = [ASC, dist, cons_cap, self_empl];
+bike_name_fix = {'Bike_ASC', 'Bike_distance', 'cons_cap', 'self_empl'};
 
-car_data_fix = [ASC, cartime, carcost, age, income];
-car_name_fix = {'Car_ASC', 'Car_time', 'Car_cost', 'age', 'income'};
+car_data_fix = [ASC, cartime, carcost, cons_cap, self_empl];
+car_name_fix = {'Car_ASC', 'Car_time', 'Car_cost', 'cons_cap', 'self_empl'};
 
-PT_data_fix = [PTtime,  PTcost, age, income];
-PT_name_fix = {'PT_time', 'PT_cost', 'age', 'income'};
+PT_data_fix = [PTtime,  PTcost, cons_cap];
+PT_name_fix = {'PT_time', 'PT_cost', 'cons_cap'};
 
 
 fprintf(fid, '\n\n----------------- MODEL VARIABLES ---------------------');
@@ -87,7 +86,7 @@ fprintf(fid, '\nBIKE variables: %s', strjoin(bike_name_fix));
 fprintf(fid, '\nCAR  variables: %s', strjoin(car_name_fix));
 fprintf(fid, '\nPT   variables: %s', strjoin(PT_name_fix));
 
-fprintf(fid, '\n\nNOTE: added income as a sociodemographic variable');
+fprintf(fid, '\n\nNOTE: ');
 
 % Specify when working with Mixed logit. Don't work for lab 1.
 walk_data_rd = [];
