@@ -1,0 +1,275 @@
+
+Date: 26-Sep-2016 20:02:16
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist inncity age_teen age_young age_adult age_senior age_retired male occup_wage occup_nowage self_empl flext income_low income_high cons_cap_low cons_cap_high single_househ househ_w_kids no_child nohhdl own_drv_lic caracc
+CAR  variables: ASC_car car_dist car_time car_cost parkposs cheappark compcar envcar car_md inncity age_teen age_young age_adult age_senior age_retired male occup_wage occup_nowage self_empl flext income_low income_high cons_cap_low cons_cap_high single_househ househ_w_kids no_child nohhdl own_drv_lic caracc
+PT   variables: PTtime PTcost PTfwt PTnoboard PTsubs PTcard inncity age_teen age_young age_adult age_senior age_retired male occup_wage occup_nowage self_empl flext income_low income_high cons_cap_low cons_cap_high single_househ househ_w_kids no_child nohhdl own_drv_lic caracc
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    +0.87      NaN 
+walk_dist       :   -10.42      NaN 
+ASC_bike        :    +0.25      NaN 
+bike_dist       :    -2.26      NaN 
+inncity         :    -1.22      NaN 
+age_teen        :    -0.16      NaN 
+age_young       :    -0.12      NaN 
+age_adult       :    -0.06      NaN 
+age_senior      :    -0.24      NaN 
+age_retired     :    -0.28      NaN 
+male            :    +0.21      NaN 
+occup_wage      :    -0.51      NaN 
+occup_nowage    :    -0.35      NaN 
+self_empl       :    +0.63      NaN 
+flext           :    -0.33      NaN 
+income_low      :    -0.39      NaN 
+income_high     :    -0.48      NaN 
+cons_cap_low    :    -0.37      NaN 
+cons_cap_high   :    -0.49      NaN 
+single_househ   :    +0.28      NaN 
+househ_w_kids   :    +0.16      NaN 
+no_child        :    +0.08      NaN 
+nohhdl          :    +0.14      NaN 
+own_drv_lic     :    +0.16      NaN 
+caracc          :    +0.16      NaN 
+ASC_car         :    -1.92      NaN 
+car_dist        :    -0.00      NaN 
+car_time        :    -0.12      NaN 
+car_cost        :    -0.03      NaN 
+parkposs        :    +0.13      NaN 
+cheappark       :    +1.00      NaN 
+compcar         :    +0.76      NaN 
+envcar          :    +0.00      NaN 
+car_md          :    +1.95      NaN 
+PTtime          :    -1.21      NaN 
+PTcost          :    -0.04      NaN 
+PTfwt           :    -2.54      NaN 
+PTnoboard       :    -0.08      NaN 
+PTsubs          :    -0.03      NaN 
+PTcard          :    +3.11      NaN 
+
+Log-likelihood:  -4579.319
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.596
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3230     3799 
+    5.7%     8.4%    39.5%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    40.0%    18.4%    16.6%    25.0% 
+    bike    15.9%    24.7%    34.6%    24.8% 
+     car     2.3%     7.5%    74.2%    16.0% 
+      PT     2.6%     5.0%    13.6%    78.8% 
+
+*******************************************************
+
+Date: 26-Sep-2016 20:09:05
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist bike_inncity bike_age_teen bike_age_young bike_age_adult bike_age_senior bike_age_retired bike_male bike_occup_wage bike_occup_nowage bike_self_empl bike_flext bike_income_low bike_income_high bike_cons_cap_low bike_cons_cap_high bike_single_househ bike_househ_w_kids bike_no_child bike_nohhdl bike_own_drv_lic bike_bike_caracc
+CAR  variables: ASC_car car_dist car_time car_cost parkposs cheappark compcar envcar car_md car_inncity car_age_teen car_age_young car_age_adult car_age_senior car_age_retired car_male car_occup_wage car_occup_nowage car_self_empl car_flext car_income_low car_income_high car_cons_cap_low cons_cap_high car_single_househ car_househ_w_kids car_no_child car_nohhdl car_own_drv_lic car_caracc
+PT   variables: PTtime PTcost PTfwt PTnoboard PTsubs PTcard PTinncity PTage_teen PTage_young PTage_adult PTage_senior PTage_retired PTmale PToccup_wage PToccup_nowage PTself_empl PTflext PTincome_low PTincome_high PTcons_cap_low PTcons_cap_high PTsingle_househ PThouseh_w_kids PTno_child PTnohhdl PTown_drv_lic PTcaracc
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    +0.69      NaN 
+walk_dist       :    -5.04      NaN 
+ASC_bike        :    -0.04      NaN 
+bike_dist       :    -1.71      NaN 
+bike_inncity    :    -1.13      NaN 
+bike_age_teen   :    +0.18      NaN 
+bike_age_young  :    -0.05      NaN 
+bike_age_adult  :    +0.12      NaN 
+bike_age_senior :    -0.09      NaN 
+bike_age_retired :    -0.20      NaN 
+bike_male       :    +0.36      NaN 
+bike_occup_wage :    +0.26      NaN 
+bike_occup_nowage :    -0.31      NaN 
+bike_self_empl  :    -0.41      NaN 
+bike_flext      :    -0.22      NaN 
+bike_income_low :    +0.04      NaN 
+bike_income_high :    -0.08      NaN 
+bike_cons_cap_low :    +0.12      NaN 
+bike_cons_cap_high :    -0.16      NaN 
+bike_single_househ :    +0.17      NaN 
+bike_househ_w_kids :    +0.18      NaN 
+bike_no_child   :    +0.12      NaN 
+bike_nohhdl     :    +0.26      NaN 
+bike_own_drv_lic :    -0.27      NaN 
+bike_bike_caracc :    +0.03      NaN 
+ASC_car         :    -0.28      NaN 
+car_dist        :    -0.00      NaN 
+car_time        :    -0.30      NaN 
+car_cost        :    -0.00      NaN 
+parkposs        :    +0.23      NaN 
+cheappark       :    +1.22      NaN 
+compcar         :    +1.04      NaN 
+envcar          :    +0.00      NaN 
+car_md          :    +2.33      NaN 
+car_inncity     :    -1.92      NaN 
+car_age_teen    :    +0.03      NaN 
+car_age_young   :    +0.01      NaN 
+car_age_adult   :    -0.06      NaN 
+car_age_senior  :    -0.23      NaN 
+car_age_retired :    -0.03      NaN 
+car_male        :    +0.27      NaN 
+car_occup_wage  :    -0.41      NaN 
+car_occup_nowage :    +0.12      NaN 
+car_self_empl   :    +0.85      NaN 
+car_flext       :    -0.47      NaN 
+car_income_low  :    -0.09      NaN 
+car_income_high :    -0.19      NaN 
+car_cons_cap_low :    +0.03      NaN 
+cons_cap_high   :    -0.31      NaN 
+car_single_househ :    +0.03      NaN 
+car_househ_w_kids :    -0.15      NaN 
+car_no_child    :    +0.07      NaN 
+car_nohhdl      :    -0.34      NaN 
+car_own_drv_lic :    +0.68      NaN 
+car_caracc      :    -0.61      NaN 
+PTtime          :    -0.07      NaN 
+PTcost          :    -0.03      NaN 
+PTfwt           :    -0.38      NaN 
+PTnoboard       :    +0.01      NaN 
+PTsubs          :    -0.15      NaN 
+PTcard          :    +3.21      NaN 
+PTinncity       :    -0.65      NaN 
+PTage_teen      :    -0.69      NaN 
+PTage_young     :    +0.12      NaN 
+PTage_adult     :    +0.20      NaN 
+PTage_senior    :    -0.11      NaN 
+PTage_retired   :    +0.11      NaN 
+PTmale          :    +0.01      NaN 
+PToccup_wage    :    -0.28      NaN 
+PToccup_nowage  :    -0.08      NaN 
+PTself_empl     :    -0.26      NaN 
+PTflext         :    -0.13      NaN 
+PTincome_low    :    +0.01      NaN 
+PTincome_high   :    -0.38      NaN 
+PTcons_cap_low  :    -0.17      NaN 
+PTcons_cap_high :    -0.20      NaN 
+PTsingle_househ :    -0.20      NaN 
+PThouseh_w_kids :    +0.11      NaN 
+PTno_child      :    +0.14      NaN 
+PTnohhdl        :    -0.15      NaN 
+PTown_drv_lic   :    +0.02      NaN 
+PTcaracc        :    +0.59      NaN 
+
+Log-likelihood:  -4522.262
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.601
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     473      690     3233     3789 
+    5.8%     8.4%    39.5%    46.3% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    33.9%    21.0%    16.4%    28.6% 
+    bike    17.4%    26.3%    32.3%    24.0% 
+     car     2.5%     6.6%    75.7%    15.2% 
+      PT     3.0%     5.2%    12.9%    78.9% 
+
+*******************************************************
+
+Date: 26-Sep-2016 22:20:05
+Date: 26-Sep-2016 22:20:58
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist inncity age_teen age_young age_adult age_senior age_retired male occup_wage occup_nowage self_empl flext income_low income_high cons_cap_low cons_cap_high single_househ househ_w_kids no_child nohhdl own_drv_lic caracc
+CAR  variables: ASC_car car_dist car_time car_cost parkposs cheappark compcar car_md inncity age_teen age_young age_adult age_senior age_retired male occup_wage occup_nowage self_empl flext income_low income_high cons_cap_low cons_cap_high single_househ househ_w_kids no_child nohhdl own_drv_lic caracc
+PT   variables: PTtime PTcost PTfwt PTsubs PTcard inncity age_teen age_young age_adult age_senior age_retired male occup_wage occup_nowage self_empl flext income_low income_high cons_cap_low cons_cap_high single_househ househ_w_kids no_child nohhdl own_drv_lic caracc
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    +0.86    +0.00 
+walk_dist       :   -10.39   -20.06 
+ASC_bike        :    +0.26    +1.31 
+bike_dist       :    -2.26   -16.00 
+inncity         :    -1.22    -8.57 
+age_teen        :    -0.23    -0.00 
+age_young       :    -0.08    -0.00 
+age_adult       :    -0.04    -0.00 
+age_senior      :    -0.22    -0.00 
+age_retired     :    -0.30    -0.00 
+male            :    +0.22    +1.66 
+occup_wage      :    -0.55    -0.00 
+occup_nowage    :    -0.31    -0.00 
+self_empl       :    +0.62    +2.83 
+flext           :    -0.33    -2.35 
+income_low      :    -0.38    -0.00 
+income_high     :    -0.48    -0.00 
+cons_cap_low    :    -0.38    +0.00 
+cons_cap_high   :    -0.48    +0.00 
+single_househ   :    +0.29    +1.34 
+househ_w_kids   :    +0.15    +0.46 
+no_child        :    +0.09    +0.48 
+nohhdl          :    +0.15    +1.03 
+own_drv_lic     :    +0.14    +0.62 
+caracc          :    +0.15    +0.92 
+ASC_car         :    -1.90    -8.04 
+car_dist        :    -0.00    -0.00 
+car_time        :    -0.11    -3.16 
+car_cost        :    -0.03    -0.03 
+parkposs        :    +0.14    +1.66 
+cheappark       :    +1.00   +12.20 
+compcar         :    +0.77    +6.05 
+car_md          :    +1.96   +17.74 
+PTtime          :    -1.35    -5.13 
+PTcost          :    -0.04    -4.54 
+PTfwt           :    -2.41    -3.80 
+PTsubs          :    -0.03    -0.25 
+PTcard          :    +3.09   +34.61 
+
+Log-likelihood:  -4580.124
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.596
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    39.9%    18.4%    16.7%    25.0% 
+    bike    15.9%    24.7%    34.6%    24.9% 
+     car     2.3%     7.5%    74.2%    16.0% 
+      PT     2.6%     5.0%    13.6%    78.8% 
+
+*******************************************************

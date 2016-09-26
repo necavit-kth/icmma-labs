@@ -13,7 +13,7 @@
 global N_FX LAB_FX CHOICE
 
 % Open results file
-fid=fopen('results.txt','a'); % open file descriptor
+fid=fopen('results_v2.txt','a'); % open file descriptor
 % WARNING!! remember that all results will be written to the same file!
 fprintf(fid, '\nDate: %s', datestr(datetime('now')));
 
@@ -29,7 +29,7 @@ beta_start = zeros(N_FX,1);
 % Make sure that the program converges. Start with 'MaxFunEvals' 100 and
 % increase until it converges. Read the output and look at the predictions.
 
- options = optimset('Display','iter-detailed','TolFun',1e-6,'TolX',1e-10','MaxFunEvals',10000,'MaxIter',1000);
+ options = optimset('Display','iter-detailed','TolFun',1e-6,'TolX',1e-10','MaxFunEvals',100000,'MaxIter',1000);
  [beta,fval,exitflag,output,grad,hessian]= fminunc(@LogLikelihood,beta_start,options); % '@' is a handle for the LogLikelihood below
  
  % Calculate t-values

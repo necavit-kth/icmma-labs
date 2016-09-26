@@ -692,3 +692,406 @@ Predicted choices:
       PT     2.9%     6.8%    23.1%    67.3% 
 
 *******************************************************
+
+Date: 25-Sep-2016 16:38:02
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: Walk_ASC Walk_distance self_empl
+BIKE variables: Bike_ASC Bike_distance cons_cap self_empl
+CAR  variables: Car_ASC Car_time Car_cost cons_cap self_empl
+PT   variables: PT_time PT_cost cons_cap
+
+NOTE: 
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+Walk_ASC        :    -3.04   -12.71 
+Walk_distance   :   -11.50   -24.74 
+self_empl       :    +0.83    +7.27 
+Bike_ASC        :    -4.74   -30.34 
+Bike_distance   :    -3.59   -26.64 
+cons_cap        :    -0.17    -3.83 
+Car_ASC         :    -4.71   -32.09 
+Car_time        :    -0.60   -21.85 
+Car_cost        :    -0.08   -17.01 
+PT_time         :    -2.82   -14.58 
+PT_cost         :    -0.26   -31.96 
+
+Log-likelihood:  -5966.894
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.474
+
+Value of time (VoT) for car:  8.0 (SEK/h)
+Value of time (VoT) for public transit: 10.9 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    32.8%    16.2%    15.9%    35.1% 
+    bike    12.9%    16.4%    33.3%    37.4% 
+     car     3.5%     7.6%    63.4%    25.5% 
+      PT     2.9%     6.8%    23.1%    67.2% 
+
+*******************************************************
+
+Date: 25-Sep-2016 16:42:16
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist cons_cap self_empl
+CAR  variables: ASC_car car_time car_cost cons_cap self_empl
+PT   variables: PT_time PT_cost cons_cap self_empl
+
+NOTE: 
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    -2.99   -12.46 
+walk_dist       :   -11.53   -24.80 
+ASC_bike        :    -4.72   -30.23 
+bike_dist       :    -3.60   -26.73 
+cons_cap        :    -0.17    -3.82 
+self_empl       :    +0.21    +1.08 
+ASC_car         :    -4.69   -32.01 
+car_time        :    -0.61   -22.02 
+car_cost        :    -0.08   -17.13 
+PT_time         :    -2.78   -14.51 
+PT_cost         :    -0.26   -32.38 
+
+Log-likelihood:  -5994.803
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.472
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit: 10.6 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    33.0%    16.3%    15.8%    34.9% 
+    bike    12.9%    16.5%    33.5%    37.1% 
+     car     3.4%     7.5%    63.2%    25.9% 
+      PT     3.0%     6.8%    23.3%    66.9% 
+
+*******************************************************
+
+Date: 25-Sep-2016 16:44:01
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist cons_cap self_empl_bike
+CAR  variables: ASC_car car_time car_cost cons_cap self_empl_car
+PT   variables: PT_time PT_cost cons_cap self_empl_pt
+
+NOTE: 
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    -2.98   -12.40 
+walk_dist       :   -11.55   -24.82 
+ASC_bike        :    -4.68   -29.83 
+bike_dist       :    -3.62   -26.72 
+cons_cap        :    -0.17    -3.83 
+self_empl_bike  :    -0.05    -0.21 
+ASC_car         :    -4.76   -32.28 
+car_time        :    -0.60   -21.72 
+car_cost        :    -0.08   -16.87 
+self_empl_car   :    +0.82    +4.05 
+PT_time         :    -2.84   -14.65 
+PT_cost         :    -0.26   -31.95 
+self_empl_pt    :    -0.27    -1.27 
+
+Log-likelihood:  -5947.980
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.476
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit: 11.0 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    33.0%    16.3%    16.0%    34.8% 
+    bike    12.9%    16.6%    33.1%    37.3% 
+     car     3.5%     7.4%    63.7%    25.5% 
+      PT     3.0%     6.9%    22.9%    67.3% 
+
+*******************************************************
+
+Date: 25-Sep-2016 16:55:08
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist cons_cap
+CAR  variables: ASC_car car_time car_cost cons_cap self_empl_car
+PT   variables: PT_time PT_cost cons_cap self_empl_pt
+
+NOTE: 
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    -2.98   -12.41 
+walk_dist       :   -11.55   -24.84 
+ASC_bike        :    -4.68   -29.88 
+bike_dist       :    -3.62   -26.72 
+cons_cap        :    -0.17    -3.83 
+ASC_car         :    -4.76   -32.28 
+car_time        :    -0.60   -21.72 
+car_cost        :    -0.08   -16.87 
+self_empl_car   :    +0.85    +5.92 
+PT_time         :    -2.84   -14.65 
+PT_cost         :    -0.26   -31.95 
+self_empl_pt    :    -0.23    -1.51 
+
+Log-likelihood:  -5947.999
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.476
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit: 11.0 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    33.0%    16.3%    16.0%    34.8% 
+    bike    13.0%    16.6%    33.2%    37.3% 
+     car     3.4%     7.4%    63.7%    25.5% 
+      PT     3.0%     6.9%    22.9%    67.3% 
+
+*******************************************************
+
+Date: 25-Sep-2016 16:56:32
+Date: 25-Sep-2016 16:56:52
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist cons_cap
+CAR  variables: ASC_car car_time car_cost cons_cap self_empl_car
+PT   variables: PT_time PT_cost cons_cap PTsubs
+
+NOTE: 
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    -2.97   -12.37 
+walk_dist       :   -11.57   -24.87 
+ASC_bike        :    -4.68   -29.82 
+bike_dist       :    -3.62   -26.76 
+cons_cap        :    -0.17    -3.82 
+ASC_car         :    -4.77   -32.24 
+car_time        :    -0.60   -21.71 
+car_cost        :    -0.08   -16.87 
+self_empl_car   :    +1.00    +9.49 
+PT_time         :    -2.84   -14.66 
+PT_cost         :    -0.26   -31.98 
+PTsubs          :    -0.09    -0.99 
+
+Log-likelihood:  -5948.634
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.476
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit: 11.0 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    33.0%    16.2%    16.0%    34.7% 
+    bike    13.0%    16.6%    33.1%    37.3% 
+     car     3.4%     7.3%    63.7%    25.5% 
+      PT     3.0%     6.9%    22.9%    67.3% 
+
+*******************************************************
+
+Date: 25-Sep-2016 16:58:21
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist cons_cap
+CAR  variables: ASC_car car_time car_cost cons_cap self_empl compcar
+PT   variables: PT_time PT_cost cons_cap PTsubs
+
+NOTE: 
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    -2.92   -12.13 
+walk_dist       :   -11.58   -24.84 
+ASC_bike        :    -4.60   -29.31 
+bike_dist       :    -3.62   -26.64 
+cons_cap        :    -0.18    -3.99 
+ASC_car         :    -4.80   -32.27 
+car_time        :    -0.59   -21.43 
+car_cost        :    -0.08   -16.84 
+self_empl       :    +0.94    +8.82 
+compcar         :    +1.13   +10.20 
+PT_time         :    -2.89   -14.79 
+PT_cost         :    -0.25   -31.32 
+PTsubs          :    -0.01    -0.08 
+
+Log-likelihood:  -5894.041
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.481
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit: 11.4 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    33.1%    16.3%    15.9%    34.8% 
+    bike    13.0%    16.8%    32.6%    37.6% 
+     car     3.4%     7.2%    64.4%    25.1% 
+      PT     3.0%     7.0%    22.4%    67.6% 
+
+*******************************************************
+
+Date: 25-Sep-2016 17:01:23
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist cons_cap kids
+CAR  variables: ASC_car car_time car_cost cons_cap self_empl compcar kids
+PT   variables: PT_time PT_cost cons_cap kids
+
+NOTE: 
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    -2.80   -10.99 
+walk_dist       :   -11.61   -24.81 
+ASC_bike        :    -4.60   -29.41 
+bike_dist       :    -3.62   -26.65 
+cons_cap        :    -0.16    -3.45 
+kids            :    +0.18    +1.26 
+ASC_car         :    -4.80   -32.38 
+car_time        :    -0.59   -21.41 
+car_cost        :    -0.08   -16.85 
+self_empl       :    +0.94    +8.83 
+compcar         :    +1.14   +10.25 
+PT_time         :    -2.89   -14.81 
+PT_cost         :    -0.25   -31.32 
+
+Log-likelihood:  -5893.242
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.481
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit: 11.4 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    33.2%    16.3%    15.9%    34.7% 
+    bike    13.0%    16.8%    32.6%    37.6% 
+     car     3.3%     7.2%    64.4%    25.1% 
+      PT     3.0%     7.0%    22.4%    67.5% 
+
+*******************************************************
+
+Date: 25-Sep-2016 17:02:13
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: ASC_walk walk_dist
+BIKE variables: ASC_bike bike_dist cons_cap
+CAR  variables: ASC_car car_time car_cost cons_cap self_empl compcar kids
+PT   variables: PT_time PT_cost cons_cap
+
+NOTE: 
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    -2.95   -12.25 
+walk_dist       :   -11.59   -24.87 
+ASC_bike        :    -4.61   -29.46 
+bike_dist       :    -3.64   -26.70 
+cons_cap        :    -0.18    -4.10 
+ASC_car         :    -4.76   -31.99 
+car_time        :    -0.60   -21.58 
+car_cost        :    -0.08   -16.90 
+self_empl       :    +0.94    +8.81 
+compcar         :    +1.14   +10.31 
+kids            :    -0.17    -2.58 
+PT_time         :    -2.91   -14.87 
+PT_cost         :    -0.25   -31.37 
+
+Log-likelihood:  -5890.695
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.481
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit: 11.4 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    33.1%    16.3%    16.0%    34.7% 
+    bike    13.1%    16.9%    32.4%    37.6% 
+     car     3.4%     7.2%    64.4%    25.1% 
+      PT     3.0%     7.0%    22.4%    67.6% 
+
+*******************************************************
