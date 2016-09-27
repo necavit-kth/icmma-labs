@@ -13,7 +13,7 @@
 global N_FX LAB_FX CHOICE
 
 % Open results file
-fid=fopen('results_v2.txt','a'); % open file descriptor
+fid=fopen('pt-cost-decrease.txt','a'); % open file descriptor
 % WARNING!! remember that all results will be written to the same file!
 fprintf(fid, '\nDate: %s', datestr(datetime('now')));
 
@@ -100,7 +100,8 @@ fprintf(fid, '%8.0f %8.0f %8.0f %8.0f ', sum_choices);
 fprintf(fid, '\n%7.1f%% %7.1f%% %7.1f%% %7.1f%% ', 100*sum_choices/N_tot);
 
 % Predicted choices 
-fprintf(fid, '\nPredicted choices:');
+fprintf(fid, '\nPredicted choices for decreased PT cost:');
+SpecifyVariablesPT();
 ChoiceProb = Logit(beta , []);
 
 sum_predchoice = sum(ChoiceProb, 1);

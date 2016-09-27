@@ -1,5 +1,5 @@
 
-Date: 27-Sep-2016 21:50:12
+Date: 27-Sep-2016 22:00:54
 
 ----------------- MODEL VARIABLES ---------------------
 WALK variables: walk_ASC walk_dist walk_dlt1km
@@ -50,16 +50,16 @@ Value of time (VoT) for public transit:  6.4 (SEK/h)
   N_walk   N_bike    N_car     N_PT 
      467      690     3229     3800 
     5.7%     8.4%    39.4%    46.4% 
-Predicted choices:
+Predicted choices for decreased PT cost:
   N_walk   N_bike    N_car     N_PT 
-     467      690     3229     3800 
-    5.7%     8.4%    39.4%    46.4% 
+     410      581     2944     4250 
+    5.0%     7.1%    36.0%    51.9% 
 
  Predicted choice probability splitted by real choice:
            p_walk   p_bike    p_car     p_PT
-    walk    34.5%    16.8%    13.7%    35.0% 
-    bike    13.3%    18.8%    29.0%    38.8% 
-     car     2.8%     6.1%    71.3%    19.7% 
-      PT     3.2%     7.4%    17.4%    71.9% 
+    walk    30.7%    14.6%    12.4%    42.3% 
+    bike    11.7%    15.9%    26.0%    46.4% 
+     car     2.6%     5.5%    66.9%    25.1% 
+      PT     2.7%     5.9%    14.4%    76.9% 
 
 *******************************************************
