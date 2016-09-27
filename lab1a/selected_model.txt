@@ -37,8 +37,12 @@ Log-likelihood:  -4956.584
 Log-likelihood for zero beta: -11348.206
 McFadden rho: 0.563
 
-Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for car: −482.5 (SEK/h)
 Value of time (VoT) for public transit:  9.1 (SEK/h)
+
+cVoT = beta_cartime/beta_carcost; %VoT for car
+pVoT = beta_PTtime/beta_PTcost; %VoT for PT
+
 
  Real Choices:
   N_walk   N_bike    N_car     N_PT 
