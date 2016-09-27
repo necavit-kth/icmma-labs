@@ -15,7 +15,6 @@ global I_F I_R I_W I_BETA_RD
 global NP NDRAWS DR 
 global USE_TRANS
 diary off 
-run_name = 'Many mixed'; % Name that will be displayed 
 
 % Since evaluating the simulated log-likelihood is computationally
 % demanding, especially when the number of draws NDRAWS is high, the
@@ -108,8 +107,12 @@ R = repmat(B,[1,NP,NDRAWS]) + reshape(cholW*DR,[N_RD,NP,NDRAWS]);
 % 6: Value of Time for car and PT
 % 7: Real and predicted choice probabilities
 %
-diary Result.out % save the result to the file Result.out
-fprintf('\n\n\n----------------- RESULTS -------- %10s',run_name)
+run_name=...
+ 'Added age as mixed variable';
+diary results.txt % save the result to the file Result.out
+fprintf('\n\n*******************************************************\n');
+fprintf('\nModel name: %s', run_name);
+fprintf('\n\n\n----------------- RESULTS -------------------');
 
 % 1: display parameter estimates and t-statistics
 
@@ -136,7 +139,7 @@ end
 % 2: Log Likelihood values
 LL_B = -SimulatedLogLikelihood(beta);
 
-fprintf('\nLog-likelihood: %10.3f', LL_B);
+fprintf('\n\nLog-likelihood: %10.3f', LL_B);
 
 % 3: (change the value if needed in calculating the null loglikelihood LL_0) 
 LL_0 = -SimulatedLogLikelihood(0*beta); % LL for zero model 
@@ -160,18 +163,18 @@ LL_C = sum_choices*log(sum_choices/N_tot)';
 fprintf('\nLog-likelihood for constants only: %6.2f', LL_C);
 
 % 5: VoT for car and PT
-I_Carcost = ismember(LAB_FX,'cost'); % Change here if name is changed in Specify Variables
-I_PTcost = ismember(LAB_FX,'cost');
+I_Carcost = ismember(LAB_FX,'car_cost'); % Change here if name is changed in Specify Variables
+I_PTcost = ismember(LAB_FX,'PT_cost');
 I_PTtime = ismember(LAB_FX,'PT_time');
-I_Cartime = ismember(LAB_FX,'Car_time');
+I_Cartime = ismember(LAB_FX,'car_time');
 
 beta_cartime = beta(I_Cartime); 
 beta_carcost = beta(I_Carcost);
 beta_PTtime = beta(I_PTtime);
 beta_PTcost = beta(I_PTcost);
 
-cVoT = []; %WRITE YOUR OWN VoT
-pVoT = [];
+cVoT = beta_cartime/beta_carcost; %VoT for car
+pVoT = beta_PTtime/beta_PTcost; %VoT for PT
 
 fprintf('\n\nValue of time (VoT) for car: %4.1f (SEK/h)', cVoT);   
 fprintf('\nValue of time (VoT) for public transit: %4.1f (SEK/h)', pVoT);
@@ -205,6 +208,5 @@ fprintf('\n%8s %7.1f%% %7.1f%% %7.1f%% %7.1f%% ', ['walk'], walk_cp);
 fprintf('\n%8s %7.1f%% %7.1f%% %7.1f%% %7.1f%% ', ['bike'], bike_cp );
 fprintf('\n%8s %7.1f%% %7.1f%% %7.1f%% %7.1f%% ', ['car'], car_cp);
 fprintf('\n%8s %7.1f%% %7.1f%% %7.1f%% %7.1f%% ', ['PT'], PT_cp);
-
+fprintf('\n');
 diary off
-

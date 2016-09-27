@@ -1,0 +1,660 @@
+
+
+*******************************************************
+
+Model name: Base model with all but one ASC, all mixed
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -11.34   -16.96 
+walk_dlt1km     :    +0.88    +2.06 
+bike_ASC        :    -2.38   -14.05 
+bike_dist       :    -2.87   -19.26 
+bike_male       :    +0.39    +4.29 
+bike_flext      :    -0.35    -2.08 
+bike_nohhdl     :    +1.27   +14.76 
+bike_own_drv_lic :    -0.72    -3.52 
+car_parkposs    :    +0.09    +0.87 
+car_cheappark   :    +1.30   +12.78 
+car_compcar     :    +1.25    +8.04 
+car_md          :    +1.54   +12.31 
+car_male        :    +0.18    +2.08 
+car_self_empl   :    +1.09    +7.38 
+car_flext       :    -0.83    -4.90 
+car_own_drv_lic :    -1.38    -6.27 
+PT_fwt          :    -2.54    -4.06 
+PT_subs         :    +0.56    +4.70 
+PT_flext        :    -0.26    -1.63 
+PT_nohhdl       :    +1.19   +17.22 
+PT_own_drv_lic  :    -0.96    -4.94 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +0.94    4        1.5      6        
+car_cost   : Normal     +0.033   4.6      1.3e-07  -3.1e-05 
+car_time   : Normal     -7.3     -14      4        14       
+PT_cost    : Normal     -0.16    -21      1.5e-12  -2.9e-10 
+PT_time    : Normal     +0.34    1.4      0.023    0.17     
+
+Covariance Matrix:
+          walk_ASC  car_cost  car_time  PT_cost   PT_time   
+ walk_ASC 2.2       0         0         0         0         
+ car_cost 0         1.8e-14   0         0         0         
+ car_time 0         0         16        0         0         
+  PT_cost 0         0         0         2.3e-24   0         
+  PT_time 0         0         0         0         0.00053   
+
+Log-likelihood:  -5859.493
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -6059.860
+McFadden rho: 0.484
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     465      707     3372     3642 
+    5.7%     8.6%    41.2%    44.5% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    32.8%    19.2%    22.5%    25.6% 
+    bike    12.5%    18.4%    33.1%    36.0% 
+     car     2.3%     5.6%    66.4%    25.6% 
+      PT     4.0%     8.1%    23.5%    64.4% 
+
+
+*******************************************************
+
+Model name: Added log-normal to get the cost right
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -15.17   -13.62 
+walk_dlt1km     :    +1.83    +2.90 
+bike_ASC        :    -2.82   -15.91 
+bike_dist       :    -3.09   -19.84 
+bike_male       :    +0.39    +4.20 
+bike_flext      :    -0.51    -2.31 
+bike_nohhdl     :    +1.52   +16.37 
+bike_own_drv_lic :    -1.49    -5.36 
+car_cost        :    +0.03    +3.73 
+car_parkposs    :    +0.01    +0.09 
+car_cheappark   :    +1.44   +12.91 
+car_compcar     :    +1.47    +8.52 
+car_md          :    +1.59   +11.84 
+car_male        :    +0.21    +2.30 
+car_self_empl   :    +1.24    +7.69 
+car_flext       :    -0.99    -4.50 
+car_own_drv_lic :    -2.05    -7.19 
+PT_cost         :    -0.17   -20.34 
+PT_fwt          :    -2.05    -3.10 
+PT_subs         :    +0.57    +4.53 
+PT_flext        :    -0.37    -1.76 
+PT_nohhdl       :    +1.35   +17.40 
+PT_own_drv_lic  :    -1.62    -6.01 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +0.57    1.8      2.6      7.3      
+car_time   : Normal     -8.3     -13      4.6      14       
+PT_time    : Normal     -0.4     -1.6     2e-11    1.3e-10  
+
+Covariance Matrix:
+          walk_ASC  car_time  PT_time   
+ walk_ASC 6.9       0         0         
+ car_time 0         21        0         
+  PT_time 0         0         3.8e-22   
+
+Log-likelihood:  -5830.866
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -6059.860
+McFadden rho: 0.486
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     461      708     3363     3655 
+    5.6%     8.6%    41.1%    44.6% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    32.6%    18.7%    21.7%    27.0% 
+    bike    12.3%    18.7%    32.8%    36.1% 
+     car     2.6%     5.8%    66.5%    25.1% 
+      PT     3.6%     8.0%    23.3%    65.0% 
+
+
+*******************************************************
+
+Model name: Added age as mixed variable
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -11.67   -15.31 
+walk_dlt1km     :    +1.07    +2.50 
+bike_ASC        :    -2.46   -11.31 
+bike_dist       :    -3.09   -21.32 
+bike_male       :    +0.43    +4.74 
+bike_flext      :    -0.51    -2.92 
+bike_nohhdl     :    +1.08   +12.52 
+bike_own_drv_lic :    -0.63    -2.76 
+car_cost        :    +0.02    +2.60 
+car_parkposs    :    +0.16    +1.64 
+car_cheappark   :    +1.47   +14.33 
+car_compcar     :    +1.31    +8.34 
+car_md          :    +1.83   +14.17 
+car_male        :    +0.14    +1.69 
+car_self_empl   :    +1.33    +8.90 
+car_flext       :    -0.86    -4.96 
+car_own_drv_lic :    -0.23    -0.92 
+PT_cost         :    -0.19   -22.99 
+PT_fwt          :    -3.18    -4.89 
+PT_subs         :    +0.50    +4.13 
+PT_flext        :    -0.35    -2.14 
+PT_nohhdl       :    +1.01   +15.12 
+PT_own_drv_lic  :    -1.25    -5.97 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +1.4     3.8      0.62     1.8      
+walk_age   : Normal     -0.074   0        0.4      4.1      
+bike_age   : Normal     +0.14    0        0.068    0        
+car_time   : Normal     -6.4     -13      3.7      14       
+car_age    : Normal     -0.46    0        1.3e-12  -3.6e-11 
+PT_time    : Normal     -0.092   -0.38    0.035    0.27     
+PT_age     : Normal     +0.4     0        9e-05    0.0033   
+
+Covariance Matrix:
+          walk_ASC  walk_age  bike_age  car_time  car_age   PT_time   PT_age    
+ walk_ASC 0.39      0         0         0         0         0         0         
+ walk_age 0         0.16      0         0         0         0         0         
+ bike_age 0         0         0.0047    0         0         0         0         
+ car_time 0         0         0         14        0         0         0         
+  car_age 0         0         0         0         1.6e-24   0         0         
+  PT_time 0         0         0         0         0         0.0012    0         
+   PT_age 0         0         0         0         0         0         8.1e-09   
+
+Log-likelihood:  -5658.246
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -5785.865
+McFadden rho: 0.501
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     475      709     3314     3689 
+    5.8%     8.7%    40.5%    45.1% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    33.9%    18.7%    19.6%    27.8% 
+    bike    12.9%    19.1%    31.5%    36.5% 
+     car     2.5%     5.8%    67.7%    24.0% 
+      PT     3.9%     7.9%    21.6%    66.7% 
+
+
+*******************************************************
+
+Model name: Added age as mixed variable
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -10.83   -22.47 
+walk_dlt1km     :    +0.50    +1.60 
+bike_dist       :    -3.25   -22.48 
+bike_male       :    +0.40    +4.54 
+bike_flext      :    -0.45    -3.27 
+bike_nohhdl     :    +0.42    +5.85 
+bike_own_drv_lic :    -0.23    -1.35 
+car_cost        :    -0.06   -13.34 
+car_parkposs    :    +0.26    +3.25 
+car_cheappark   :    +1.26   +15.75 
+car_compcar     :    +0.84    +6.77 
+car_md          :    +1.94   +16.61 
+car_male        :    +0.30    +4.28 
+car_self_empl   :    +1.10    +9.02 
+car_flext       :    -0.86    -6.49 
+car_own_drv_lic :    +0.26    +1.34 
+PT_cost         :    -0.24   -27.92 
+PT_fwt          :    -4.64    -7.91 
+PT_subs         :    +0.23    +2.17 
+PT_flext        :    -0.37    -2.93 
+PT_nohhdl       :    +0.11    +1.94 
+PT_own_drv_lic  :    -0.53    -3.53 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +4.7     20       0.031    0.09     
+bike_ASC   : Normal     +2.1     9.9      2.3e-12  0        
+car_time   : Normal     -0.37    -3.8     0.33     3.4      
+PT_time    : Normal     -1.5     -6.3     0.028    0.12     
+PT_ASC     : Normal     +7.1     31       0.024    0.26     
+
+Covariance Matrix:
+          walk_ASC  bike_ASC  car_time  PT_time   PT_ASC    
+ walk_ASC 0.00095   0         0         0         0         
+ bike_ASC 0         5.1e-24   0         0         0         
+ car_time 0         0         0.11      0         0         
+  PT_time 0         0         0         0.00079   0         
+   PT_ASC 0         0         0         0         0.00057   
+
+Log-likelihood:  -5240.543
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -5243.348
+McFadden rho: 0.538
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     468      691     3225     3802 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    34.5%    16.9%    13.7%    34.9% 
+    bike    13.3%    18.9%    29.0%    38.7% 
+     car     2.8%     6.2%    71.2%    19.7% 
+      PT     3.2%     7.4%    17.4%    72.0% 
+
+
+*******************************************************
+
+Model name: Added age as mixed variable
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -10.92   -22.20 
+walk_dlt1km     :    +0.46    +1.49 
+bike_dist       :    -3.39   -21.65 
+bike_male       :    +0.39    +4.37 
+bike_flext      :    -0.43    -3.08 
+bike_nohhdl     :    +0.45    +6.19 
+bike_own_drv_lic :    -0.23    -1.37 
+car_parkposs    :    +0.25    +2.97 
+car_cheappark   :    +1.33   +15.82 
+car_compcar     :    +0.87    +6.76 
+car_md          :    +1.96   +16.38 
+car_male        :    +0.32    +4.37 
+car_self_empl   :    +1.12    +8.91 
+car_flext       :    -0.88    -6.58 
+car_own_drv_lic :    +0.21    +1.08 
+PT_fwt          :    -4.57    -7.39 
+PT_subs         :    +0.25    +2.29 
+PT_flext        :    -0.35    -2.76 
+PT_nohhdl       :    +0.10    +1.75 
+PT_own_drv_lic  :    -0.51    -3.39 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +4.7     20       0.14     0.44     
+bike_ASC   : Normal     +2       9.7      0.11     0        
+car_time   : Normal     -0.34    -4.1     0.26     2.8      
+car_cost   : Normal     -0.073   -12      0.027    6.4      
+PT_time    : Normal     -1.5     -5.9     0.017    -0.12    
+PT_ASC     : Normal     +7.3     29       0.0096   -0.11    
+PT_cost    : Normal     -0.26    -25      6e-14    -1.9e-12 
+
+Covariance Matrix:
+          walk_ASC  bike_ASC  car_time  car_cost  PT_time   PT_ASC    PT_cost   
+ walk_ASC 0.019     0         0         0         0         0         0         
+ bike_ASC 0         0.012     0         0         0         0         0         
+ car_time 0         0         0.069     0         0         0         0         
+ car_cost 0         0         0         0.00073   0         0         0         
+  PT_time 0         0         0         0         0.00029   0         0         
+   PT_ASC 0         0         0         0         0         9.2e-05   0         
+  PT_cost 0         0         0         0         0         0         3.6e-27   
+
+Log-likelihood:  -5227.424
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -5243.400
+McFadden rho: 0.539
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      689     3224     3807 
+    5.7%     8.4%    39.4%    46.5% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    34.5%    17.1%    14.1%    34.2% 
+    bike    13.3%    19.2%    29.5%    38.0% 
+     car     2.8%     6.2%    70.9%    20.1% 
+      PT     3.3%     7.3%    17.5%    72.0% 
+
+
+*******************************************************
+
+Model name: Added age as mixed variable
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -10.92   -22.56 
+walk_dlt1km     :    +0.51    +1.65 
+bike_dist       :    -3.52   -21.16 
+bike_male       :    +0.40    +4.34 
+bike_flext      :    -0.47    -3.37 
+bike_nohhdl     :    +0.42    +5.73 
+bike_own_drv_lic :    -0.26    -1.56 
+car_parkposs    :    +0.27    +3.25 
+car_cheappark   :    +1.33   +15.58 
+car_compcar     :    +0.88    +6.84 
+car_md          :    +2.02   +16.72 
+car_male        :    +0.34    +4.53 
+car_self_empl   :    +1.15    +9.06 
+car_flext       :    -0.90    -6.73 
+car_own_drv_lic :    +0.15    +0.76 
+PT_cost         :    -0.27   -24.28 
+PT_fwt          :    -4.79    -7.48 
+PT_subs         :    +0.23    +2.07 
+PT_flext        :    -0.38    -3.00 
+PT_nohhdl       :    +0.10    +1.80 
+PT_own_drv_lic  :    -0.56    -3.74 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +4.7     20       0.015    -0.039   
+bike_ASC   : Normal     +2.2     9.5      0.21     0.36     
+car_time   : Normal     -0.22    -5.6     5.5e-12  0        
+car_cost   : Log-normal +0.077   -32      0.11     9.2      
+PT_time    : Normal     -1.8     -6.8     0.023    0.14     
+PT_ASC     : Normal     +7.6     29       0.016    -0.17    
+
+Covariance Matrix:
+          walk_ASC  bike_ASC  car_time  car_cost  PT_time   PT_ASC    
+ walk_ASC 0.00022   0         0         0         0         0         
+ bike_ASC 0         0.044     0         0         0         0         
+ car_time 0         0         3e-23     0         0         0         
+ car_cost 0         0         0         0.16      0         0         
+  PT_time 0         0         0         0         0.00053   0         
+   PT_ASC 0         0         0         0         0         0.00027   
+
+Log-likelihood:  -5224.756
+Log-likelihood for zero beta: -88003.672
+Log-likelihood with MNL-specification:  -5243.385
+McFadden rho: 0.941
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      688     3221     3810 
+    5.7%     8.4%    39.3%    46.5% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    34.4%    17.1%    13.9%    34.7% 
+    bike    13.4%    19.2%    29.5%    37.9% 
+     car     2.8%     6.2%    71.0%    20.0% 
+      PT     3.2%     7.2%    17.4%    72.1% 
+
+
+*******************************************************
+
+Model name: Added age as mixed variable
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -11.10   -22.81 
+walk_dlt1km     :    +0.50    +1.61 
+bike_dist       :    -3.53   -22.14 
+bike_male       :    +0.40    +4.47 
+bike_flext      :    -0.46    -3.30 
+bike_nohhdl     :    +0.41    +5.68 
+bike_own_drv_lic :    -0.23    -1.35 
+car_time        :    -0.22    -5.60 
+car_parkposs    :    +0.26    +3.16 
+car_cheappark   :    +1.33   +15.65 
+car_compcar     :    +0.87    +6.84 
+car_md          :    +2.02   +16.71 
+car_male        :    +0.33    +4.50 
+car_self_empl   :    +1.14    +9.06 
+car_flext       :    -0.89    -6.68 
+car_own_drv_lic :    +0.25    +1.25 
+PT_cost         :    -0.26   -24.76 
+PT_fwt          :    -4.99    -7.83 
+PT_subs         :    +0.23    +2.12 
+PT_flext        :    -0.37    -2.96 
+PT_nohhdl       :    +0.10    +1.82 
+PT_own_drv_lic  :    -0.55    -3.62 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +4.8     21       0.011    -0.027   
+bike_ASC   : Normal     +2.2     10       9.8e-11  0        
+car_cost   : Normal     -0.083   -13      0.03     8.1      
+PT_time    : Normal     -1.8     -7       0.0084   -0.054   
+PT_ASC     : Normal     +7.6     29       0.031    -0.32    
+
+Covariance Matrix:
+          walk_ASC  bike_ASC  car_cost  PT_time   PT_ASC    
+ walk_ASC 0.00012   0         0         0         0         
+ bike_ASC 0         9.6e-21   0         0         0         
+ car_cost 0         0         0.00092   0         0         
+  PT_time 0         0         0         7e-05     0         
+   PT_ASC 0         0         0         0         0.00095   
+
+Log-likelihood:  -5227.896
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -5243.363
+McFadden rho: 0.539
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      689     3220     3809 
+    5.7%     8.4%    39.3%    46.5% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    34.6%    17.0%    13.9%    34.5% 
+    bike    13.4%    19.3%    29.4%    37.9% 
+     car     2.8%     6.2%    71.0%    20.0% 
+      PT     3.2%     7.3%    17.3%    72.2% 
+
+
+*******************************************************
+
+Model name: Added age as mixed variable
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -10.88   -22.45 
+walk_dlt1km     :    +0.51    +1.65 
+bike_ASC        :    +2.09    +9.80 
+bike_dist       :    -3.43   -21.73 
+bike_male       :    +0.40    +4.51 
+bike_flext      :    -0.48    -3.44 
+bike_nohhdl     :    +0.42    +5.75 
+bike_own_drv_lic :    -0.22    -1.33 
+car_time        :    -0.22    -5.75 
+car_parkposs    :    +0.26    +3.18 
+car_cheappark   :    +1.31   +15.62 
+car_compcar     :    +0.87    +6.86 
+car_md          :    +2.00   +16.69 
+car_male        :    +0.33    +4.52 
+car_self_empl   :    +1.14    +9.13 
+car_flext       :    -0.88    -6.60 
+car_own_drv_lic :    +0.17    +0.85 
+PT_cost         :    -0.26   -24.87 
+PT_fwt          :    -4.78    -7.58 
+PT_subs         :    +0.23    +2.10 
+PT_flext        :    -0.37    -2.93 
+PT_nohhdl       :    +0.10    +1.71 
+PT_own_drv_lic  :    -0.56    -3.70 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +4.7     20       0.12     0.38     
+car_cost   : Normal     -0.08    -13      0.029    7.2      
+PT_time    : Normal     -1.8     -6.8     9.5e-12  -6.1e-11 
+PT_ASC     : Normal     +7.5     29       0.064    -0.68    
+
+Covariance Matrix:
+          walk_ASC  car_cost  PT_time   PT_ASC    
+ walk_ASC 0.014     0         0         0         
+ car_cost 0         0.00081   0         0         
+  PT_time 0         0         8.9e-23   0         
+   PT_ASC 0         0         0         0.0041    
+
+Log-likelihood:  -5228.611
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -5243.348
+McFadden rho: 0.539
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      688     3222     3810 
+    5.7%     8.4%    39.4%    46.5% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    34.3%    16.8%    14.0%    34.9% 
+    bike    13.4%    19.1%    29.5%    38.0% 
+     car     2.8%     6.2%    71.0%    20.0% 
+      PT     3.2%     7.3%    17.4%    72.1% 
+
+
+*******************************************************
+
+Model name: Added age as mixed variable
+
+
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -11.10   -22.81 
+walk_dlt1km     :    +0.50    +1.61 
+bike_dist       :    -3.53   -22.14 
+bike_male       :    +0.40    +4.47 
+bike_flext      :    -0.46    -3.30 
+bike_nohhdl     :    +0.41    +5.68 
+bike_own_drv_lic :    -0.23    -1.35 
+car_time        :    -0.22    -5.60 
+car_parkposs    :    +0.26    +3.16 
+car_cheappark   :    +1.33   +15.65 
+car_compcar     :    +0.87    +6.84 
+car_md          :    +2.02   +16.71 
+car_male        :    +0.33    +4.50 
+car_self_empl   :    +1.14    +9.06 
+car_flext       :    -0.89    -6.68 
+car_own_drv_lic :    +0.25    +1.25 
+PT_cost         :    -0.26   -24.76 
+PT_fwt          :    -4.99    -7.83 
+PT_subs         :    +0.23    +2.12 
+PT_flext        :    -0.37    -2.96 
+PT_nohhdl       :    +0.10    +1.82 
+PT_own_drv_lic  :    -0.55    -3.62 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +4.8     21       0.011    -0.027   
+bike_ASC   : Normal     +2.2     10       9.8e-11  0        
+car_cost   : Normal     -0.083   -13      0.03     8.1      
+PT_time    : Normal     -1.8     -7       0.0084   -0.054   
+PT_ASC     : Normal     +7.6     29       0.031    -0.32    
+
+Covariance Matrix:
+          walk_ASC  bike_ASC  car_cost  PT_time   PT_ASC    
+ walk_ASC 0.00012   0         0         0         0         
+ bike_ASC 0         9.6e-21   0         0         0         
+ car_cost 0         0         0.00092   0         0         
+  PT_time 0         0         0         7e-05     0         
+   PT_ASC 0         0         0         0         0.00095   
+
+Log-likelihood:  -5227.896
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -5243.363
+McFadden rho: 0.539
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      689     3220     3809 
+    5.7%     8.4%    39.3%    46.5% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    34.6%    17.0%    13.9%    34.5% 
+    bike    13.4%    19.3%    29.4%    37.9% 
+     car     2.8%     6.2%    71.0%    20.0% 
+      PT     3.2%     7.3%    17.3%    72.2% 

@@ -1,0 +1,64 @@
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -15.17   -13.62 
+walk_dlt1km     :    +1.83    +2.90 
+bike_ASC        :    -2.82   -15.91 
+bike_dist       :    -3.09   -19.84 
+bike_male       :    +0.39    +4.20 
+bike_flext      :    -0.51    -2.31 
+bike_nohhdl     :    +1.52   +16.37 
+bike_own_drv_lic :    -1.49    -5.36 
+car_cost        :    +0.03    +3.73 
+car_parkposs    :    +0.01    +0.09 
+car_cheappark   :    +1.44   +12.91 
+car_compcar     :    +1.47    +8.52 
+car_md          :    +1.59   +11.84 
+car_male        :    +0.21    +2.30 
+car_self_empl   :    +1.24    +7.69 
+car_flext       :    -0.99    -4.50 
+car_own_drv_lic :    -2.05    -7.19 
+PT_cost         :    -0.17   -20.34 
+PT_fwt          :    -2.05    -3.10 
+PT_subs         :    +0.57    +4.53 
+PT_flext        :    -0.37    -1.76 
+PT_nohhdl       :    +1.35   +17.40 
+PT_own_drv_lic  :    -1.62    -6.01 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +0.57    1.8      2.6      7.3      
+car_time   : Normal     -8.3     -13      4.6      14       
+PT_time    : Normal     -0.4     -1.6     2e-11    1.3e-10  
+
+Covariance Matrix:
+          walk_ASC  car_time  PT_time   
+ walk_ASC 6.9       0         0         
+ car_time 0         21        0         
+  PT_time 0         0         3.8e-22   
+
+Log-likelihood:  -5830.866
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -6059.860
+McFadden rho: 0.486
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     461      708     3363     3655 
+    5.6%     8.6%    41.1%    44.6% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    32.6%    18.7%    21.7%    27.0% 
+    bike    12.3%    18.7%    32.8%    36.1% 
+     car     2.6%     5.8%    66.5%    25.1% 
+      PT     3.6%     8.0%    23.3%    65.0% 
+

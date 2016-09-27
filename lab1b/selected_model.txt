@@ -1,0 +1,67 @@
+----------------- RESULTS -------------------
+Fixed parameters: 
+Parameter       : Estimate  t-value 
+walk_dist       :   -11.10   -22.81 
+walk_dlt1km     :    +0.50    +1.61 
+bike_dist       :    -3.53   -22.14 
+bike_male       :    +0.40    +4.47 
+bike_flext      :    -0.46    -3.30 
+bike_nohhdl     :    +0.41    +5.68 
+bike_own_drv_lic :    -0.23    -1.35 
+car_time        :    -0.22    -5.60 
+car_parkposs    :    +0.26    +3.16 
+car_cheappark   :    +1.33   +15.65 
+car_compcar     :    +0.87    +6.84 
+car_md          :    +2.02   +16.71 
+car_male        :    +0.33    +4.50 
+car_self_empl   :    +1.14    +9.06 
+car_flext       :    -0.89    -6.68 
+car_own_drv_lic :    +0.25    +1.25 
+PT_cost         :    -0.26   -24.76 
+PT_fwt          :    -4.99    -7.83 
+PT_subs         :    +0.23    +2.12 
+PT_flext        :    -0.37    -2.96 
+PT_nohhdl       :    +0.10    +1.82 
+PT_own_drv_lic  :    -0.55    -3.62 
+
+Random parameters: 
+Parameter  : Dist.      Mean     t_mean   Std.     t_std    
+walk_ASC   : Normal     +4.8     21       0.011    -0.027   
+bike_ASC   : Normal     +2.2     10       9.8e-11  0        
+car_cost   : Normal     -0.083   -13      0.03     8.1      
+PT_time    : Normal     -1.8     -7       0.0084   -0.054   
+PT_ASC     : Normal     +7.6     29       0.031    -0.32    
+
+Covariance Matrix:
+          walk_ASC  bike_ASC  car_cost  PT_time   PT_ASC    
+ walk_ASC 0.00012   0         0         0         0         
+ bike_ASC 0         9.6e-21   0         0         0         
+ car_cost 0         0         0.00092   0         0         
+  PT_time 0         0         0         7e-05     0         
+   PT_ASC 0         0         0         0         0.00095   
+
+Log-likelihood:  -5227.896
+Log-likelihood for zero beta: -11348.206
+Log-likelihood with MNL-specification:  -5243.363
+McFadden rho: 0.539
+Log-likelihood for constants only: -8964.13
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      689     3220     3809 
+    5.7%     8.4%    39.3%    46.5% 
+
+ Predicted choice probability :
+           p_walk   p_bike    p_car     p_PT
+    walk    34.6%    17.0%    13.9%    34.5% 
+    bike    13.4%    19.3%    29.4%    37.9% 
+     car     2.8%     6.2%    71.0%    20.0% 
+      PT     3.2%     7.3%    17.3%    72.2% 
+
