@@ -68,9 +68,9 @@ fprintf(fid, '\nMcFadden rho: %5.3f', 1-LL_B/LL_0);
 % 5: VoT for car and PT
 % Observe that the cost-parameter is the same for car and PT in the initial
 % specification, but actual cost is different.
-I_Carcost = ismember(LAB_FX,'Car_cost'); % Change here if name is changed in Specify Variables
+I_Carcost = ismember(LAB_FX,'car_cost'); % Change here if name is changed in Specify Variables
 I_PTcost = ismember(LAB_FX,'PT_cost');
-I_Cartime = ismember(LAB_FX,'Car_time');
+I_Cartime = ismember(LAB_FX,'car_time');
 I_PTtime = ismember(LAB_FX,'PT_time');
 
 beta_cartime = beta(I_Cartime); 
