@@ -108,8 +108,8 @@ R = repmat(B,[1,NP,NDRAWS]) + reshape(cholW*DR,[N_RD,NP,NDRAWS]);
 % 7: Real and predicted choice probabilities
 %
 run_name=...
- 'Added age as mixed variable';
-diary results.txt % save the result to the file Result.out
+ 'Prediction results';
+diary prediction.txt % save the result to the file Result.out
 fprintf('\n\n*******************************************************\n');
 fprintf('\nModel name: %s', run_name);
 fprintf('\n\n\n----------------- RESULTS -------------------');
@@ -209,4 +209,27 @@ fprintf('\n%8s %7.1f%% %7.1f%% %7.1f%% %7.1f%% ', ['bike'], bike_cp );
 fprintf('\n%8s %7.1f%% %7.1f%% %7.1f%% %7.1f%% ', ['car'], car_cp);
 fprintf('\n%8s %7.1f%% %7.1f%% %7.1f%% %7.1f%% ', ['PT'], PT_cp);
 fprintf('\n');
+
+% Predicted choices CAR COST
+fprintf('\nPredicted choices for increased car cost:')
+SpecifyVariablesCAR(0);
+ChoiceProb = Logit(F , trans(R));
+ChoiceProb = mean(ChoiceProb,3)';
+
+sum_predchoice = sum(ChoiceProb, 1);
+fprintf('\n%8s %8s %8s %8s \n' , ['N_walk'],['N_bike'],['N_car'], ['N_PT']);
+fprintf('%8.0f %8.0f %8.0f %8.0f ', sum_predchoice)
+fprintf('\n%7.1f%% %7.1f%% %7.1f%% %7.1f%% ', 100*sum_predchoice/N_tot);
+
+% Predicted choices PT COST
+fprintf('\nPredicted choices for decreased PT cost:')
+SpecifyVariablesPT(0);
+ChoiceProb = Logit(F , trans(R));
+ChoiceProb = mean(ChoiceProb,3)';
+
+sum_predchoice = sum(ChoiceProb, 1);
+fprintf('\n%8s %8s %8s %8s \n' , ['N_walk'],['N_bike'],['N_car'], ['N_PT']);
+fprintf('%8.0f %8.0f %8.0f %8.0f ', sum_predchoice)
+fprintf('\n%7.1f%% %7.1f%% %7.1f%% %7.1f%% ', 100*sum_predchoice/N_tot);
+
 diary off
