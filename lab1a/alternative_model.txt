@@ -1,0 +1,54 @@
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+ASC_walk        :    -1.75    +0.00 
+walk_dist       :   -11.04   -22.66 
+ASC_bike        :    -4.34   -27.56 
+bike_dist       :    -3.19   -22.94 
+inncity         :    -1.06    -8.07 
+male            :    +0.14    +1.10 
+occup_wage      :    +0.72    +0.00 
+occup_nowage    :    +1.02    +0.00 
+self_empl       :    +0.45    +2.13 
+flext           :    -0.27    -2.06 
+single_househ   :    +0.27    +1.50 
+househ_w_kids   :    +0.01    +0.04 
+no_child        :    +0.13    +0.70 
+nohhdl          :    +0.12    +0.86 
+own_drv_lic     :    -0.14    -0.74 
+caracc          :    +0.07    +0.50 
+ASC_car         :    -6.89   -36.58 
+car_time        :    -0.16    -4.57 
+car_cost        :    -0.07   -14.53 
+parkposs        :    +0.26    +3.33 
+cheappark       :    +1.17   +15.13 
+compcar         :    +0.88    +7.38 
+car_md          :    +2.10   +19.63 
+PTtime          :    -1.61    -6.97 
+PTcost          :    -0.24   -29.66 
+PTfwt           :    -4.85    -8.48 
+PTsubs          :    +0.18    +1.76 
+
+Log-likelihood:  -5314.528
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.532
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    36.9%    16.1%    13.6%    33.5% 
+    bike    12.8%    18.4%    29.4%    39.4% 
+     car     2.1%     6.1%    70.7%    21.1% 
+      PT     3.6%     7.7%    17.9%    70.8% 
+
+*******************************************************

@@ -826,3 +826,455 @@ Predicted choices:
       PT     3.8%     8.1%    15.4%    72.7% 
 
 *******************************************************
+
+Date: 27-Sep-2016 09:30:02
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: walk_dist walk_age_teen walk_age_young walk_age_adult walk_age_senior walk_age_retired
+BIKE variables: bike_ASC bike_dist inncity bike_male flext single_househ househ_w_kids no_child nohhdl own_drv_lic bike_age_teen bike_age_young bike_age_adult bike_age_senior bike_age_retired
+CAR  variables: car_ASC car_time car_cost car_parkposs car_cheappark car_compcar car_md inncity car_male car_self_empl flext single_househ househ_w_kids no_child nohhdl own_drv_lic car_caracc car_age_teen car_age_young car_age_adult car_age_senior car_age_retired
+PT   variables: PT_time PT_cost PT_fwt PT_subs inncity flext single_househ househ_w_kids no_child nohhdl own_drv_lic PT_age_teen PT_age_young PT_age_adult PT_age_senior PT_age_retired
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+walk_dist       :   -11.78   -24.11 
+walk_age_teen   :    -3.40    +0.00 
+walk_age_young  :    -3.48    +0.00 
+walk_age_adult  :    -3.36    +0.00 
+walk_age_senior :    -3.24    -0.19 
+walk_age_retired :    -3.31    +0.00 
+bike_ASC        :    -4.55    -0.22 
+bike_dist       :    -3.77   -26.53 
+inncity         :    -0.91    -6.85 
+bike_male       :    +0.47    +5.26 
+flext           :    -0.28    -2.22 
+single_househ   :    +0.30    +1.65 
+househ_w_kids   :    +0.01    +0.03 
+no_child        :    +0.12    +0.67 
+nohhdl          :    +0.18    +1.34 
+own_drv_lic     :    -0.26    -1.22 
+bike_age_teen   :    -0.73    +0.00 
+bike_age_young  :    -0.94    -0.04 
+bike_age_adult  :    -0.78    +0.00 
+bike_age_senior :    -0.73    -0.03 
+bike_age_retired :    -1.37    +0.00 
+car_ASC         :   +25.00    +0.00 
+car_time        :    -9.27   -24.04 
+car_cost        :    +0.02    +2.50 
+car_parkposs    :    +0.21    +2.50 
+car_cheappark   :    +0.88   +10.89 
+car_compcar     :    +0.85    +6.80 
+car_md          :    +2.37   +22.17 
+car_male        :    +0.43    +5.87 
+car_self_empl   :    +0.89    +7.21 
+car_caracc      :   -36.78   -23.72 
+car_age_teen    :    +4.87    +0.00 
+car_age_young   :    +5.15    +0.00 
+car_age_adult   :    +4.88    +0.00 
+car_age_senior  :    +4.95    +0.00 
+car_age_retired :    +5.14    +0.00 
+PT_time         :    -2.32    -9.41 
+PT_cost         :    -0.25   -34.12 
+PT_fwt          :    -2.43    -4.05 
+PT_subs         :    +0.23    +2.16 
+PT_age_teen     :    -0.74    +0.00 
+PT_age_young    :    -0.73    +0.00 
+PT_age_adult    :    -0.74    +0.00 
+PT_age_senior   :    -0.98    -0.06 
+PT_age_retired  :    -0.46    +0.00 
+
+Log-likelihood:  -4969.486
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.562
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  9.3 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    37.1%    16.6%    15.5%    30.7% 
+    bike    12.8%    19.5%    29.8%    37.9% 
+     car     2.0%     5.6%    73.9%    18.5% 
+      PT     3.7%     7.8%    14.8%    73.6% 
+
+*******************************************************
+
+Date: 27-Sep-2016 09:33:44
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: walk_dist walk_age_teen walk_age_young walk_age_adult walk_age_senior walk_age_retired
+BIKE variables: bike_ASC bike_dist inncity bike_male flext single_househ househ_w_kids no_child nohhdl own_drv_lic bike_age_teen bike_age_young bike_age_adult bike_age_senior bike_age_retired
+CAR  variables: car_ASC car_time car_cost car_parkposs car_cheappark car_compcar car_md inncity car_male car_self_empl flext single_househ househ_w_kids no_child nohhdl own_drv_lic car_caracc car_age_teen car_age_young car_age_adult car_age_senior car_age_retired
+PT   variables: PT_time PT_cost PT_fwt PT_subs inncity flext single_househ househ_w_kids no_child nohhdl own_drv_lic
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+walk_dist       :   -11.78   -24.23 
+walk_age_teen   :    -2.66    -7.41 
+walk_age_young  :    -2.74    -6.70 
+walk_age_adult  :    -2.62    -8.52 
+walk_age_senior :    -2.26    -7.79 
+walk_age_retired :    -2.83    -5.63 
+bike_ASC        :    -3.94    +0.00 
+bike_dist       :    -3.77   -28.00 
+inncity         :    -0.91    -6.85 
+bike_male       :    +0.47    +5.26 
+flext           :    -0.28    -2.22 
+single_househ   :    +0.30    +1.64 
+househ_w_kids   :    -0.01    -0.03 
+no_child        :    +0.13    +0.72 
+nohhdl          :    +0.18    +1.32 
+own_drv_lic     :    -0.26    -1.20 
+bike_age_teen   :    -0.60    +0.00 
+bike_age_young  :    -0.82    +0.00 
+bike_age_adult  :    -0.65    +0.00 
+bike_age_senior :    -0.35    +0.00 
+bike_age_retired :    -1.52    +0.00 
+car_ASC         :   +25.61    +0.00 
+car_time        :    -9.27   -27.18 
+car_cost        :    +0.02    +2.51 
+car_parkposs    :    +0.21    +2.51 
+car_cheappark   :    +0.88   +11.15 
+car_compcar     :    +0.85    +6.85 
+car_md          :    +2.37   +24.16 
+car_male        :    +0.43    +5.90 
+car_self_empl   :    +0.89    +7.26 
+car_caracc      :   -36.78   -26.75 
+car_age_teen    :    +5.01    +0.00 
+car_age_young   :    +5.28    +0.00 
+car_age_adult   :    +5.00    +0.00 
+car_age_senior  :    +5.33    +0.00 
+car_age_retired :    +4.99    +0.00 
+PT_time         :    -2.32    -9.57 
+PT_cost         :    -0.25   -39.28 
+PT_fwt          :    -2.42    -4.05 
+PT_subs         :    +0.23    +2.16 
+
+Log-likelihood:  -4969.487
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.562
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  9.3 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    37.1%    16.6%    15.5%    30.7% 
+    bike    12.8%    19.5%    29.8%    37.9% 
+     car     2.0%     5.6%    73.9%    18.5% 
+      PT     3.7%     7.8%    14.8%    73.6% 
+
+*******************************************************
+
+Date: 27-Sep-2016 09:47:08
+Date: 27-Sep-2016 09:47:29
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: walk_ASC walk_dist walk_age_teen walk_age_young walk_age_adult walk_age_senior walk_age_retired walk_inncity
+BIKE variables: bike_ASC bike_dist bike_inncity bike_male flext single_househ househ_w_kids no_child nohhdl own_drv_lic
+CAR  variables: car_ASC car_time car_cost car_parkposs car_cheappark car_compcar car_md car_inncity car_male car_self_empl flext single_househ househ_w_kids no_child nohhdl own_drv_lic car_caracc
+PT   variables: PT_time PT_cost PT_fwt PT_subs PT_inncity flext single_househ househ_w_kids no_child nohhdl own_drv_lic
+
+NOTE: model with all the variables factored in
+Date: 27-Sep-2016 09:48:36
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: walk_ASC walk_dist walk_age_teen walk_age_young walk_age_adult walk_age_senior walk_age_retired walk_inncity
+BIKE variables: bike_ASC bike_dist bike_inncity bike_male flext single_househ househ_w_kids no_child nohhdl own_drv_lic
+CAR  variables: car_ASC car_time car_cost car_parkposs car_cheappark car_compcar car_md car_inncity car_male car_self_empl flext single_househ househ_w_kids no_child nohhdl own_drv_lic car_caracc
+PT   variables: PT_time PT_cost PT_fwt PT_subs PT_inncity flext single_househ househ_w_kids no_child nohhdl own_drv_lic
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+walk_ASC        :    -1.90    +0.00 
+walk_dist       :   -11.62   -23.66 
+walk_age_teen   :    -0.43    +0.00 
+walk_age_young  :    -0.47    +0.00 
+walk_age_adult  :    -0.36    +0.00 
+walk_age_senior :    -0.16    +0.00 
+walk_age_retired :    -0.47    +0.00 
+walk_inncity    :    +0.75    +0.00 
+bike_ASC        :    -4.18   -23.81 
+bike_dist       :    -3.69   -23.94 
+bike_inncity    :    -0.17    +0.00 
+bike_male       :    +0.46    +5.10 
+flext           :    -0.28    -2.17 
+single_househ   :    +0.30    +1.63 
+househ_w_kids   :    +0.03    +0.11 
+no_child        :    +0.11    +0.59 
+nohhdl          :    +0.20    +1.47 
+own_drv_lic     :    -0.25    -1.17 
+car_ASC         :   +29.98   +16.94 
+car_time        :    -8.97   -20.54 
+car_cost        :    +0.01    +2.25 
+car_parkposs    :    +0.21    +2.56 
+car_cheappark   :    +0.89   +10.68 
+car_compcar     :    +0.95    +7.42 
+car_md          :    +2.42   +20.95 
+car_inncity     :    -0.68    +0.00 
+car_male        :    +0.44    +6.02 
+car_self_empl   :    +1.01    +7.89 
+car_caracc      :   -35.67   -20.33 
+PT_time         :    -2.04    -8.08 
+PT_cost         :    -0.25   -29.79 
+PT_fwt          :    -1.72    -2.91 
+PT_subs         :    +0.21    +1.94 
+PT_inncity      :    +0.11    +0.00 
+
+Log-likelihood:  -4947.050
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.564
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  8.2 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    37.1%    16.6%    14.0%    32.3% 
+    bike    12.9%    19.5%    29.4%    38.2% 
+     car     2.0%     5.4%    74.3%    18.2% 
+      PT     3.7%     8.0%    14.8%    73.6% 
+
+*******************************************************
+
+Date: 27-Sep-2016 10:41:35
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: walk_ASC walk_dist
+BIKE variables: bike_ASC bike_dist bike_male flext single_househ househ_w_kids no_child nohhdl own_drv_lic
+CAR  variables: car_ASC car_time car_cost car_parkposs car_cheappark car_compcar car_md car_male car_self_empl flext single_househ househ_w_kids no_child nohhdl own_drv_lic car_caracc
+PT   variables: PT_time PT_cost PT_fwt PT_subs flext single_househ househ_w_kids no_child nohhdl own_drv_lic
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+walk_ASC        :    -1.85    -6.72 
+walk_dist       :   -11.81   -24.74 
+bike_ASC        :    -4.42   -27.32 
+bike_dist       :    -3.73   -24.77 
+bike_male       :    +0.45    +5.00 
+flext           :    -0.46    -3.76 
+single_househ   :    +0.36    +2.08 
+househ_w_kids   :    +0.02    +0.07 
+no_child        :    +0.16    +0.93 
+nohhdl          :    +0.30    +2.59 
+own_drv_lic     :    -0.49    -3.05 
+car_ASC         :   +31.29   +17.76 
+car_time        :    -9.38   -21.51 
+car_cost        :    +0.02    +2.86 
+car_parkposs    :    +0.20    +2.46 
+car_cheappark   :    +0.93   +11.29 
+car_compcar     :    +0.84    +6.72 
+car_md          :    +2.41   +20.86 
+car_male        :    +0.40    +5.50 
+car_self_empl   :    +0.92    +7.44 
+car_caracc      :   -37.24   -21.25 
+PT_time         :    -2.28    -9.05 
+PT_cost         :    -0.25   -29.59 
+PT_fwt          :    -2.18    -3.70 
+PT_subs         :    +0.23    +2.15 
+
+Log-likelihood:  -5010.073
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.559
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  9.1 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    35.2%    17.1%    15.9%    31.8% 
+    bike    13.1%    19.2%    29.9%    37.8% 
+     car     2.5%     5.3%    73.7%    18.4% 
+      PT     3.4%     8.0%    14.9%    73.6% 
+
+*******************************************************
+
+Date: 27-Sep-2016 10:50:30
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: walk_ASC walk_dist walk_dlt2km
+BIKE variables: bike_ASC bike_dist bike_male bike_flext bike_single_househ bike_househ_w_kids bike_no_child bike_nohhdl bike_own_drv_lic
+CAR  variables: car_ASC car_time car_cost car_parkposs car_cheappark car_compcar car_md car_male car_self_empl car_flext car_single_househ car_househ_w_kids car_no_child car_nohhdl car_own_drv_lic car_caracc
+PT   variables: PT_time PT_cost PT_fwt PT_subs PT_flext PT_single_househ PT_househ_w_kids PT_no_child PT_nohhdl PT_own_drv_lic
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter       : Estimate  t-value 
+walk_ASC        :    -2.24    -6.96 
+walk_dist       :   -11.22   -18.01 
+walk_dlt2km     :    +0.24    +1.47 
+bike_ASC        :    -5.09   -22.13 
+bike_dist       :    -3.81   -24.93 
+bike_male       :    +0.40    +4.40 
+bike_flext      :    -0.45    -3.21 
+bike_single_househ :    +0.38    +1.86 
+bike_househ_w_kids :    +0.22    +0.64 
+bike_no_child   :    +0.20    +1.01 
+bike_nohhdl     :    +0.54    +4.06 
+bike_own_drv_lic :    -0.35    -1.89 
+car_ASC         :   +31.83   +17.70 
+car_time        :    -9.64   -21.57 
+car_cost        :    +0.02    +3.11 
+car_parkposs    :    +0.17    +2.06 
+car_cheappark   :    +0.87   +10.40 
+car_compcar     :    +0.88    +6.96 
+car_md          :    +2.18   +18.11 
+car_male        :    +0.37    +4.99 
+car_self_empl   :    +0.91    +7.25 
+car_flext       :    -0.63    -4.69 
+car_single_househ :    +0.32    +1.60 
+car_househ_w_kids :    -0.03    -0.10 
+car_no_child    :    +0.14    +0.73 
+car_nohhdl      :    +0.17    +1.29 
+car_own_drv_lic :    +0.41    +1.91 
+car_caracc      :   -38.12   -21.25 
+PT_time         :    -2.26    -8.84 
+PT_cost         :    -0.25   -29.12 
+PT_fwt          :    -2.26    -3.73 
+PT_subs         :    +0.24    +2.22 
+PT_flext        :    -0.35    -2.79 
+PT_single_househ :    +0.38    +2.12 
+PT_househ_w_kids :    -0.02    -0.06 
+PT_no_child     :    +0.15    +0.80 
+PT_nohhdl       :    +0.24    +1.98 
+PT_own_drv_lic  :    -0.73    -4.28 
+
+Log-likelihood:  -4948.947
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.564
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  9.2 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    35.5%    16.8%    15.8%    31.9% 
+    bike    13.2%    19.8%    29.5%    37.6% 
+     car     2.5%     5.6%    74.1%    17.8% 
+      PT     3.4%     7.7%    14.8%    74.2% 
+
+*******************************************************
+
+Date: 27-Sep-2016 10:56:48
+
+----------------- MODEL VARIABLES ---------------------
+WALK variables: walk_ASC walk_dist walk_dlt1km
+BIKE variables: bike_ASC bike_dist bike_male bike_flext bike_single_househ bike_nohhdl bike_own_drv_lic
+CAR  variables: car_ASC car_time car_cost car_parkposs car_cheappark car_compcar car_md car_male car_self_empl car_flext car_single_househ car_nohhdl car_own_drv_lic car_caracc
+PT   variables: PT_time PT_cost PT_fwt PT_subs PT_flext PT_single_househ PT_nohhdl PT_own_drv_lic
+
+NOTE: model with all the variables factored in
+
+----------------- DISPLAY RESULTS ---------------------
+Parameter          : Estimate  t-value 
+walk_ASC           :    -2.15    -7.66 
+walk_dist          :   -11.56   -23.61 
+walk_dlt1km        :    +0.53    +1.71 
+bike_ASC           :    -4.98   -22.13 
+bike_dist          :    -3.78   -24.87 
+bike_male          :    +0.40    +4.44 
+bike_flext         :    -0.43    -3.11 
+bike_single_househ :    +0.28    +1.40 
+bike_nohhdl        :    +0.56    +4.25 
+bike_own_drv_lic   :    -0.41    -2.25 
+car_ASC            :   +31.85   +17.70 
+car_time           :    -9.65   -21.58 
+car_cost           :    +0.02    +3.14 
+car_parkposs       :    +0.17    +2.07 
+car_cheappark      :    +0.87   +10.43 
+car_compcar        :    +0.87    +6.92 
+car_md             :    +2.17   +18.08 
+car_male           :    +0.37    +5.02 
+car_self_empl      :    +0.91    +7.26 
+car_flext          :    -0.62    -4.69 
+car_single_househ  :    +0.29    +1.51 
+car_nohhdl         :    +0.20    +1.46 
+car_own_drv_lic    :    +0.39    +1.81 
+car_caracc         :   -38.16   -21.26 
+PT_time            :    -2.25    -8.81 
+PT_cost            :    -0.25   -29.19 
+PT_fwt             :    -2.28    -3.78 
+PT_subs            :    +0.24    +2.20 
+PT_flext           :    -0.35    -2.77 
+PT_single_househ   :    +0.35    +1.95 
+PT_nohhdl          :    +0.26    +2.12 
+PT_own_drv_lic     :    -0.75    -4.48 
+
+Log-likelihood:  -4956.584
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.563
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  9.1 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    35.3%    17.0%    15.7%    32.0% 
+    bike    13.3%    19.5%    29.5%    37.6% 
+     car     2.5%     5.6%    74.1%    17.8% 
+      PT     3.4%     7.8%    14.7%    74.1% 
+
+*******************************************************

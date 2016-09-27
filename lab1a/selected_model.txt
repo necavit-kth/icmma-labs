@@ -1,0 +1,59 @@
+----------------- DISPLAY RESULTS ---------------------
+Parameter          : Estimate  t-value 
+walk_ASC           :    -2.15    -7.66 
+walk_dist          :   -11.56   -23.61 
+walk_dlt1km        :    +0.53    +1.71 
+bike_ASC           :    -4.98   -22.13 
+bike_dist          :    -3.78   -24.87 
+bike_male          :    +0.40    +4.44 
+bike_flext         :    -0.43    -3.11 
+bike_single_househ :    +0.28    +1.40 
+bike_nohhdl        :    +0.56    +4.25 
+bike_own_drv_lic   :    -0.41    -2.25 
+car_ASC            :   +31.85   +17.70 
+car_time           :    -9.65   -21.58 
+car_cost           :    +0.02    +3.14 
+car_parkposs       :    +0.17    +2.07 
+car_cheappark      :    +0.87   +10.43 
+car_compcar        :    +0.87    +6.92 
+car_md             :    +2.17   +18.08 
+car_male           :    +0.37    +5.02 
+car_self_empl      :    +0.91    +7.26 
+car_flext          :    -0.62    -4.69 
+car_single_househ  :    +0.29    +1.51 
+car_nohhdl         :    +0.20    +1.46 
+car_own_drv_lic    :    +0.39    +1.81 
+car_caracc         :   -38.16   -21.26 
+PT_time            :    -2.25    -8.81 
+PT_cost            :    -0.25   -29.19 
+PT_fwt             :    -2.28    -3.78 
+PT_subs            :    +0.24    +2.20 
+PT_flext           :    -0.35    -2.77 
+PT_single_househ   :    +0.35    +1.95 
+PT_nohhdl          :    +0.26    +2.12 
+PT_own_drv_lic     :    -0.75    -4.48 
+
+Log-likelihood:  -4956.584
+Log-likelihood for zero beta: -11348.206
+McFadden rho: 0.563
+
+Value of time (VoT) for car:  (SEK/h)
+Value of time (VoT) for public transit:  9.1 (SEK/h)
+
+ Real Choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+Predicted choices:
+  N_walk   N_bike    N_car     N_PT 
+     467      690     3229     3800 
+    5.7%     8.4%    39.4%    46.4% 
+
+ Predicted choice probability splitted by real choice:
+           p_walk   p_bike    p_car     p_PT
+    walk    35.3%    17.0%    15.7%    32.0% 
+    bike    13.3%    19.5%    29.5%    37.6% 
+     car     2.5%     5.6%    74.1%    17.8% 
+      PT     3.4%     7.8%    14.7%    74.1% 
+
+*******************************************************
