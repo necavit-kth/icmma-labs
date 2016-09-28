@@ -14,7 +14,7 @@ bike_dist       :    -3.53   -22.14
 bike_male       :    +0.40    +4.47 
 bike_flext      :    -0.46    -3.30 
 bike_nohhdl     :    +0.41    +5.68 
-bike_own_drv_lic :    -0.23    -1.35 
+bike_own_drv_lic:    -0.23    -1.35 
 car_time        :    -0.22    -5.60 
 car_parkposs    :    +0.26    +3.16 
 car_cheappark   :    +1.33   +15.65 
