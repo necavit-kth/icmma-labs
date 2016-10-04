@@ -1,4 +1,3 @@
-
 function SpecifyVariables(UpdateDraws)
 % CHOOSEVARIABLES structure and transforms the data in file 'filename' to a
 % more usable form. Here, is where you specify the variables to be included
