@@ -7,11 +7,11 @@
 global NDRAWS N_RD N_FX NP CHOICEIDX LAB_RD LAB_FX
 
 % runtime parameters
-NDRAWS = 1; % number of draws in the HB sampler
-isMixed = 0; % whether to allow for mixed variables
+NDRAWS = 1; 
+updateDraws = 0; % whether to allow for mixed variables
 
 % load the dataset and select the variables to include in the model
-SpecifyVariables(isMixed);
+SpecifyVariables(updateDraws);
 
 
 %%%% %%%% %%%% Model initialization %%%% %%%% %%%%

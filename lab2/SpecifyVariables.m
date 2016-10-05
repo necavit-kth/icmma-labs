@@ -23,7 +23,6 @@ end
 end
 %%%%%%%%%% Prepare data %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load the data from 'filename' and save it to the structure D.
-%
 filename = 'rvu_data_workNH.csv';
 D = LoadData(filename);
 
@@ -44,14 +43,12 @@ SQRTNP = sqrt(NP);
 % Examples of transformed/created variable
 % Some more alternatives can be found in the bottom of the file. If you
 % want to add more, look in LoadData.
-%
 
 % General
 ASC = ones(NP,1);% ASC = alternative specific constant
 year=DATA(:,D_IDX.('year'));
 male=DATA(:,D_IDX.('male'));
 dist=DATA(:, D_IDX.('dist_OK_m'))/10000; %distance (10km)
-
 
 % Car
 cartime=(1 - DATA(:, D_IDX.caracc))*10 ...
@@ -70,20 +67,15 @@ PTtime = PTauxt + PTinvt + PTtotwt; % total travel time by public transport
 %%%%%%%%%% Specify model %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Specify which variables that should influence which mode
 % Add more from the transformed variables above.
-%
-
-          
 walk_data_fix = [ASC, dist ];
 walk_name_fix = {'Walk_ASC','Walk_distance'};
-
 bike_data_fix = [dist];
 bike_name_fix = {'Bike_distance'};
-
 car_data_fix = [ASC,cartime,carcost];
 car_name_fix = {'Car_ASC','CarTime','cost'};
+PT_data_fix = [PTtime,PTcost];%, PTcost,PTtime  ];
+PT_name_fix = {'PT_time','cost'};%,'cost','PT_time'};
 
-PT_data_fix = [ASC,PTtime,PTcost];%, PTcost,PTtime  ];
-PT_name_fix = {'PT_ASC','PT_time','cost'};%,'cost','PT_time'};
 % Specify when working with Mixed logit
 walk_data_rd = [];
 walk_name_rd = {};
@@ -91,8 +83,8 @@ bike_data_rd = [];
 bike_name_rd = {};
 car_data_rd = [];
 car_name_rd = {};
-PT_data_rd = [];
-PT_name_rd = {};
+PT_data_rd = [ASC];
+PT_name_rd = {'PT_ASC'};
 
 % Define log-normally distributed variables, must be specified in the
 % among the random parameters above. 
@@ -108,8 +100,6 @@ log_normal_var =  {};%{'Car_time','PT_time'};
 %              'PT_time' , 'Car_time'};
 % correlates walk_asc with bike_asc and PT_time with Car_time
 cov_var = {};% {'Car_time','PT_time'};
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Save index of variables for respectively mode and sort into fixed
