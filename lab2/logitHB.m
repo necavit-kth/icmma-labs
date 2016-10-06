@@ -6,7 +6,8 @@ function P = logitHB(F,R,MODEL_FX,MODEL_RD)
 %   R is a vector with individual specific parameters. Its size is N_RD x 1
 
 % calculate logit probability
-U = utilities(F,R,MODEL_FX,MODEL_RD);
+[V_walk,V_bike,V_car,V_PT] = utilities(F,R,MODEL_FX,MODEL_RD);
+U = [V_walk,V_bike,V_car,V_PT];
 maxU = max(U,[],2);
 U = U - maxU(:,[1,1,1,1]);
 expU = exp(U);

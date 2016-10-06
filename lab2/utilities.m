@@ -22,11 +22,7 @@ function [V_walk,V_bike,V_car,V_PT] = utilities(F,R,MODEL_FX,MODEL_RD)
   V_PT =(VAR_FX(I_DATA_FX.PT,:)'*F(I_BETA_FX.PT));
 
   if (N_RD > 0)
-    aux1 = VAR_RD(I_DATA_RD.walk,:);
-    aux2 = R(I_BETA_RD.walk,:);
-    whos aux1;
-    whos aux2;
-    V_walk = V_walk + sum(aux1 .* aux2,1)';
+    V_walk = V_walk + sum(VAR_RD(I_DATA_RD.walk,:).*R(I_BETA_RD.walk,:),1)';
     V_bike = V_bike + sum(VAR_RD(I_DATA_RD.bike,:).*R(I_BETA_RD.bike,:),1)';
     V_car = V_car + sum(VAR_RD(I_DATA_RD.car,:).*R(I_BETA_RD.car,:),1)';
     V_PT = V_PT + sum(VAR_RD(I_DATA_RD.PT,:).*R(I_BETA_RD.PT,:),1)';

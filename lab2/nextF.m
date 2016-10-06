@@ -3,7 +3,7 @@ function [F_new,P_new,RhoF_new,acceptF] = nextF(R,F,P,RhoF,MODEL_FX,MODEL_RD,CHO
 % a Metropolis-Hastings sampler solution
 
 % create vector of candidates for the new fixed parameters
-F_cand = F + RhoF * randn(size(F), 1);
+F_cand = F + RhoF * randn(length(F), 1);
 
 % calculate logit probabilities with the new fixed parameters and the
 %  current estimated random parameters
