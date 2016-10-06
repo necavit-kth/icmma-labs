@@ -3,18 +3,30 @@
 
 
 %%%% %%%% %%%% Environment and data init %%%% %%%% %%%%
-% initialize globals
-global NDRAWS N_RD N_FX NP CHOICEIDX LAB_RD LAB_FX
+% prepare the data:
+%   - load the data from 'filename' and remove missing observations,
+%     mode choice 5 ('other') and year 2006.
+%     NOTE: you can prepare a short dataset for test purposes by using:
+%        DATA = RemoveObservations(DATA,{'short','20'});
+filename = 'rvu_data_workNH.csv';
+D = removeObservations(...
+  loadData(filename),...
+  {'mode','5','year','2006'});
 
-% runtime parameters
-NDRAWS = 1; 
-updateDraws = 0; % whether to allow for mixed variables
+% Calculate choice vector.
+[CHOICE,CHOICEIDX] = calculateChoice(D);
 
-% load the dataset and select the variables to include in the model
-SpecifyVariables(updateDraws);
-
+% select the variables to include in the model and initialize useful
+%  variables
+[MODEL_FX, MODEL_RD] = specifyVariables(D);
+N_FX = MODEL_FX.n;
+N_RD = MODEL_RD.n;
+LAB_FX = MODEL_FX.labels;
+LAB_RD = MODEL_RD.labels;
 
 %%%% %%%% %%%% Model initialization %%%% %%%% %%%%
+N_obs = size(D,1);
+
 % fixed parameters initialization: a vector of zeros
 F = zeros(N_FX,1);
 
@@ -25,19 +37,20 @@ B = zeros(N_RD,1);
 W = N_RD * eye(N_RD);
 
 % initialize random parameters
-R = repmat(B,1,NP) + chol(W)' * randn(N_RD,NP);
+R = repmat(B,1,N_obs) + chol(W)' * randn(N_RD,N_obs);
 
 
 %%%% %%%% %%%% Model estimation %%%% %%%% %%%%
 % 1. Estimate an initial model to get an initial set of parameters
   % estimate the logit probabilities for all alternatives
-P = Logit_HB(F,R);
+P = logitHB(F,R,MODEL_FX,MODEL_RD);
 
   % select the observed alternatives probabilities
 P = P(CHOICEIDX);
 
 % 2. Sample the parameters using the Gibbs-MH hierarchical sampler
 RhoR = 0.01;
+RhoF = 0.1;
 
   % burn-in
 fprintf('\nGibbs/MH sampler burn-in... \n');
@@ -48,7 +61,7 @@ burnInFSaved = [];
 acceptF_total = 0;
 for k = 1 : Nburnin
   % perform a Gibbs sampler round
-  [B,W,R,F,P,RhoR,acceptF] = SampleParameters(B,W,R,F,P,RhoR);
+  [B,W,R,F,P,RhoR,RhoF,acceptF] = sampleParameters(B,W,R,F,P,RhoR,RhoF,MODEL_FX,MODEL_RD,CHOICEIDX);
   
   % update acceptance rates and plot them to visualize convergence
   acceptF_total = acceptF_total + acceptF;
@@ -76,7 +89,7 @@ Nsampling = samplesToSave * samplingSaveStep;
 fixedSaved = zeros(N_FX,samplesToSave);
 for k = 1 : Nsampling
   % perform a Gibbs sampler round
-  [B,W,R,F,P,RhoR,acceptF] = SampleParameters(B,W,R,F,P,RhoR);
+  [B,W,R,F,P,RhoR,RhoF,acceptF] = sampleParameters(B,W,R,F,P,RhoR,RhoF,MODEL_FX,MODEL_RD,CHOICEIDX);
   
   % save sampled parameters
   if mod(k,samplingSaveStep) == 1

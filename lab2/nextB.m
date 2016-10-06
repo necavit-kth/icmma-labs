@@ -4,11 +4,11 @@ function B_new = nextB(W,R)
 % - mean = mean(betas)
 % - cov  = W/N
 
-% initialization
-global N_RD NP
+% useful variables
+[N_rand,N_obs] = size(R);
 
 % draw from a standard normal distribution the N_RD (number of beta params)
-r = randn(N_RD,1);
+r = randn(N_rand,1);
 
 % calculate the betas' means (column-wise)
 R_mean = mean(R,2);
@@ -17,7 +17,7 @@ R_mean = mean(R,2);
 rvar = chol(W)' * r;
 
 % scale the covariance matrix
-rvar = rvar./NP;
+rvar = rvar./N_obs;
 
 % return the new Bs (means)
 B_new = R_mean + rvar;
