@@ -51,12 +51,15 @@ RhoR = 0.01;
 RhoF = 0.1;
 
   % burn-in
-fprintf('\nGibbs/MH sampler burn-in...\nProgress: ');
+fprintf('\nGibbs/MH sampler burn-in...\n');
 Nburnin = 20000;
 burnInSaveStep = 100;
 burnInPlotStep = 500;
 burnInFSaved = [];
 acceptF_total = 0;
+acceptFSaved = [];
+acceptR_total = 0;
+acceptRSaved = [];
 for k = 1 : Nburnin
   % perform a Gibbs sampler round
   [B,W,R,F,P,RhoR,RhoF,acceptR,acceptF] = ...
@@ -64,20 +67,26 @@ for k = 1 : Nburnin
   
   % update acceptance rates and plot them to visualize convergence
   acceptF_total = acceptF_total + acceptF;
+  acceptR_total = acceptR_total + acceptR;
   if mod(k,burnInSaveStep) == 1
-    %TODO plot: fprintf('Acceptance rate for F: %2.3f\n', acceptF_total/100);
+    fprintf('accept_F: %2.3f\taccept_R: %2.3f\n',...
+      acceptF_total/burnInSaveStep,acceptR_total/burnInSaveStep);
+    acceptFSaved= [acceptFSaved,(acceptF_total/burnInSaveStep)];
+    acceptRSaved= [acceptRSaved,(acceptR_total/burnInSaveStep)];
     acceptF_total = 0;
+    acceptR_total = 0;
     burnInFSaved = [burnInFSaved,F];
     nSaved = size(burnInFSaved,2);
-    if mod(k,burnInSaveStep*10) == 1
-      fprintf('. ');
-    end
   end
   if mod(k,burnInPlotStep) == 1
-    for i = 1 : N_fx
-      subplot(ceil(N_fx/2),2,i);
-      plot([1:nSaved]*100,burnInFSaved(i,:));
-      ylabel(Labels_fx{i});
+    subplot(ceil((N_fx + 1)/2),2,1);
+    plot([1:nSaved]*100,acceptFSaved);
+    ylabel('accept F rate','Interpreter','none');
+    for i = 2 : (N_fx + 1)
+      subplot(ceil((N_fx + 1)/2),2,i);
+      plot([1:nSaved]*100,burnInFSaved(i-1,:));
+      ylabel(Labels_fx{i-1},'Interpreter','none');
+      xlabel('N_draws','Interpreter','none');
     end
     drawnow;
   end
