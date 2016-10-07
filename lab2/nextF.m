@@ -21,8 +21,6 @@ r = rand; % uniformly distributed in the (0,1) range
 % NOTE: to avoid using conditional statements (¬¬') do the following
 %  trickery and consequently low-legible code:
 acceptF = r < P_accept;
-
-% TODO: update RhoF
 RhoF_new = RhoF;
 
 F_new = F * (1 - acceptF) + F_cand * acceptF;

@@ -48,11 +48,11 @@ P = P(CHOICEIDX);
 
 % 2. Sample the parameters using the Gibbs-MH hierarchical sampler
 RhoR = 0.01;
-RhoF = 0.1;
+RhoF = 0.005;
 
   % burn-in
 fprintf('\nGibbs/MH sampler burn-in...\n');
-Nburnin = 20000;
+Nburnin = 60000;
 burnInSaveStep = 100;
 burnInPlotStep = 500;
 burnInFSaved = [];
@@ -69,7 +69,7 @@ for k = 1 : Nburnin
   acceptF_total = acceptF_total + acceptF;
   acceptR_total = acceptR_total + acceptR;
   if mod(k,burnInSaveStep) == 1
-    fprintf('accept_F: %2.3f\taccept_R: %2.3f\n',...
+    fprintf('accFX: %2.3f\taccRD: %2.3f\n',...
       acceptF_total/burnInSaveStep,acceptR_total/burnInSaveStep);
     acceptFSaved= [acceptFSaved,(acceptF_total/burnInSaveStep)];
     acceptRSaved= [acceptRSaved,(acceptR_total/burnInSaveStep)];
@@ -86,7 +86,6 @@ for k = 1 : Nburnin
       subplot(ceil((N_fx + 1)/2),2,i);
       plot([1:nSaved]*100,burnInFSaved(i-1,:));
       ylabel(Labels_fx{i-1},'Interpreter','none');
-      xlabel('N_draws','Interpreter','none');
     end
     drawnow;
   end
