@@ -1,9 +1,12 @@
 function [B,W,R,F,P,RhoR,RhoF] = gibbsSampler_burnIn...
-  (draws,saveStep,plotStep,...
+  (draws,saveStep,plotStep,legends,...
    B,W,R,F,P,RhoR,RhoF,MODEL_FX,MODEL_RD,CHOICEIDX)
 %GIBBSSAMPLER_BURNIN performs Gibbs sampling for a predefined number of
 % draws, given as a parameter. Returns the posterior sets of parameters.
 fprintf('\nGibbs/MH sampler burn-in...\n');
+
+  % clear the previous figure, if any, in order to get a new plot
+clf;
 
   % useful variables
 N_fx = MODEL_FX.n;
@@ -11,17 +14,14 @@ N_rd = MODEL_RD.n;
 Labels_fx = MODEL_FX.labels;
 Labels_rd = MODEL_RD.labels;
 
-  % plot tiling params
-plotCols = 7;
-plotRows = 4;
-totalSubplots = 1 + N_fx + N_rd; % +2 because of the acceptance rates
-
   % for plotting purposes: fixed params saved data
-FSaved = []; % the saved parameters to plot
+Fsaved = []; % the saved parameters to plot
 accFtotal = 0; % the acceptance rate total
 accFsaved = []; % the acceptance rate saved to plot
 
   % for plotting purposes: random params saved data
+Bsaved = []; % saved population means
+Wsaved = []; % saved population variances
 accRtotal = 0; % acceptance rate total
 accRsaved = []; % acceptance rate to plot
 
@@ -53,46 +53,65 @@ for k = 1 : draws
     
     accFtotal = 0;
     accRtotal = 0;
-    FSaved = [FSaved,F];
-    nSaved = size(FSaved,2);
+    Fsaved = [Fsaved,F];
+    Bsaved = [Bsaved,B];
+    Wsaved = [Wsaved,diag(W)];
+    nSaved = size(Fsaved,2);
   end
   
   % plot!!
   if mod(k,plotStep) == 1
+% FIXED PARAMETERS *******************************************************
       % fixed acceptance rate
-    ax1 = subplot(4,1,1);
+    axAccFX = subplot(4,3,1);
     plot([1:nSaved]*100,accFsaved);
-    hline = refline(ax1,0,mean(accFsaved,2));
+    hline = refline(axAccFX,0,mean(accFsaved,2));
     hline.Color = 'r';
     ylabel('FX acc. rate','Interpreter','none');
       % all fixed params
-    ax2 = subplot(4,1,[2,3,4]);
-    hold(ax2,'on');
-    ax2.ColorOrderIndex = 1;
+    axParamsFX = subplot(4,3,[4,7,10]);
+    hold(axParamsFX,'on');
+    axParamsFX.ColorOrderIndex = 1;
     for i = 1 : N_fx
-      plot(ax2,[1:nSaved]*100,FSaved(i,:));
+      plot(axParamsFX,[1:nSaved]*100,Fsaved(i,:));
     end
     ylabel('FX parameters','Interpreter','none');
-    legend(Labels_fx,...
+    if legends
+      legend(Labels_fx,...
       'Interpreter','none','FontSize',6,'Location','bestoutside');
-    hold(ax2,'off');
+    end
+    hold(axParamsFX,'off');
+% RANDOM PARAMETERS ******************************************************
+      % random params acceptance rate
+    axAccRD = subplot(4,3,[2,3]);
+    plot([1:nSaved]*100,accRsaved);
+    hline = refline(axAccRD,0,mean(accRsaved,2));
+    hline.Color = 'r';
+    ylabel('RD acc. rate','Interpreter','none');
+      % population params means
+    axB = subplot(4,3,[5,8,11]);
+    hold(axB,'on');
+    axB.ColorOrderIndex = 1;
+    for i = 1 : N_rd
+      plot(axB,[1:nSaved]*100,Bsaved(i,:));
+    end
+    ylabel('RD parameters means (B)','Interpreter','none');
+    hold(axB,'off');
+        % population params variances
+    axW = subplot(4,3,[6,9,12]);
+    hold(axW,'on');
+    axW.ColorOrderIndex = 1;
+    for i = 1 : N_rd
+      plot(axW,[1:nSaved]*100,Wsaved(i,:));
+    end
+    ylabel('RD parameters variances (W)','Interpreter','none');
+    if legends
+      legend(Labels_rd,...
+        'Interpreter','none','FontSize',6,'Location','bestoutside');  
+    end
+    hold(axW,'off');
+% DRAWNOW ******************************************************
     drawnow;
-    
-%       % plot fixed params acceptance rate
-%     fRateAx = subplot(plotRows,plotCols,1);
-%     plot([1:nSaved]*100,accFsaved);
-%     ylabel('accept F rate','Interpreter','none');
-%       % also plot the mean
-%     acceptFmean = mean(accFsaved,2);
-%     hline = refline(fRateAx,0,acceptFmean);
-%     hline.Color = 'r';
-%       % plot the rest of the fixed parameters
-%     for i = 2 : totalSubplots
-%       subplot(plotRows,plotCols,i);
-%       plot([1:nSaved]*100,FSaved(i-1,:));
-%       ylabel(Labels_fx{i-1},'Interpreter','none');
-%     end
-%     drawnow;
   end
 end
 
