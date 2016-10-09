@@ -10,6 +10,7 @@
 %     mode choice 5 ('other') and year 2006.
 %     NOTE: you can prepare a short dataset for test purposes by using:
 %        DATA = RemoveObservations(DATA,{'short','20'});
+diary off;
 filename = 'rvu_data_workNH.csv';
 D = removeObservations(...
   loadData(filename),...
@@ -51,7 +52,7 @@ P = P(CHOICEIDX);
 
 % 2. Sample the parameters using the Gibbs-MH hierarchical sampler
   % burn-in params
-Nburnin = 1000;
+Nburnin = 800000;
 burnInSaveStep = 100;
 burnInPlotStep = 500;
 legends = 0; % boolean indicating whether to display the legends
@@ -63,7 +64,7 @@ legends = 0; % boolean indicating whether to display the legends
                           MODEL_FX,MODEL_RD,CHOICEIDX);
 
   % Gibbs sampling
-samplesToSave = 20;
+samplesToSave = 200;
 samplingSaveStep = 100;
 [samplesB,samplesW,samplesR,samplesF,samplesP] = gibbsSampler(...
                           samplingSaveStep,samplesToSave,...
@@ -73,7 +74,12 @@ samplingSaveStep = 100;
 
 % 3. Calculate means and variances of the posterior distributions
 %     and print the resulting model
-fprintf('\n\n**** **** **** **** MODEL SPECIFICATION **** **** **** ****\n');
+diary(sprintf('results/mixed_%s',datestr(now,'HH-MM-SS')));
+diary on;
+fprintf('\n\nBurn-in draws: %6d\n',Nburnin);
+fprintf('Samples: %5d\n',samplesToSave);
+fprintf('Sample step: %5d\n',samplingSaveStep);
+fprintf('\n**** **** **** **** MODEL SPECIFICATION **** **** **** ****\n');
 
 % fixed parameters
 Fmean = mean(samplesF,2); % average by row
@@ -152,3 +158,5 @@ cVoT = cartime/carcost; %VoT for car
 pVoT = PTtime/PTcost; %VoT for PT
 fprintf('\n(mean) Value of Time (VoT) for CAR: %4.1f (SEK/h)', cVoT);   
 fprintf('\n(mean) Value of Time (VoT) for PT: %4.1f (SEK/h)\n', pVoT);
+
+diary off;
