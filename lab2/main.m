@@ -25,6 +25,7 @@ N_fx = MODEL_FX.n;
 N_rd = MODEL_RD.n;
 Labels_fx = MODEL_FX.labels;
 Labels_rd = MODEL_RD.labels;
+Dist_rd = MODEL_RD.dist;
 N_obs = size(D.Data,1);
 
 
@@ -50,7 +51,7 @@ P = P(CHOICEIDX);
 
 % 2. Sample the parameters using the Gibbs-MH hierarchical sampler
   % burn-in params
-Nburnin = 100000;
+Nburnin = 1000;
 burnInSaveStep = 100;
 burnInPlotStep = 500;
 legends = 0; % boolean indicating whether to display the legends
@@ -62,7 +63,7 @@ legends = 0; % boolean indicating whether to display the legends
                           MODEL_FX,MODEL_RD,CHOICEIDX);
 
   % Gibbs sampling
-samplesToSave = 200;
+samplesToSave = 20;
 samplingSaveStep = 100;
 [samplesB,samplesW,samplesR,samplesF,samplesP] = gibbsSampler(...
                           samplingSaveStep,samplesToSave,...
@@ -74,10 +75,12 @@ samplingSaveStep = 100;
 %     and print the resulting model
 fprintf('\n\n**** **** **** **** MODEL SPECIFICATION **** **** **** ****\n');
 
-  % fixed parameters
+% fixed parameters
 Fmean = mean(samplesF,2); % average by row
 Fcovar = cov(samplesF'); % transposed to make observations into rows
+
 fprintf('Fixed parameters\n');
+fprintf('-------------------------------------------------\n');
 fprintf('%-20s : %8s %8s %8s\n','parameter','mean','stdev','t-test');
 fprintf('-------------------------------------------------\n');
 for i = 1 : N_fx
@@ -87,70 +90,65 @@ for i = 1 : N_fx
     sqrt(Fcovar(i,i)),...
     Fmean(i)/sqrt(Fcovar(i,i)));
 end
+fprintf('-------------------------------------------------\n');
 
+% random parameters - population params
+Bmean = mean(samplesB,2);
+Bcovar = cov(samplesB');
+Wmean = mean(samplesW,2);
+Wcovar = cov(samplesW');
+
+fprintf('\nRandom parameters - population parameters\n');
+fprintf('-------------------------------------------------------------------\n');
+fprintf('%-20s : %10s %6s %9s %6s %9s\n',...
+  'parameter','dist.','b','t-value','W','t-value');
+fprintf('-------------------------------------------------------------------\n');
+for i = 1 : N_rd
+  fprintf('%-20s : %10s %6.2f %9.2f %6.2f %9.2f\n',...
+    Labels_rd{i},...
+    Dist_rd{i},...
+    Bmean(i),...
+    Bmean(i)/sqrt(Bcovar(i,i)),...
+    Wmean(i),...
+    Wmean(i)/sqrt(Wcovar(i,i))...
+  );
+end
+fprintf('-------------------------------------------------------------------\n');
+
+% performance parameters and other measures
   % log-likelihood estimation
 LL = sum(log(mean(samplesP,2)));
 fprintf('\nLog-likelihood: %8.2f\n',LL);
 
-if N_rd == 0
-  % VoT calculation for an MNL
-  alpha_cartime = Fmean(ismember(Labels_fx,'car_time')); 
-  alpha_carcost = Fmean(ismember(Labels_fx,'car_cost'));
-  alpha_PTtime = Fmean(ismember(Labels_fx,'PT_time'));
-  alpha_PTcost = Fmean(ismember(Labels_fx,'PT_cost'));
-
-  cVoT = alpha_cartime/alpha_carcost; %VoT for car
-  pVoT = alpha_PTtime/alpha_PTcost; %VoT for PT
-  
-  fprintf('\n(mean) Value of Time (VoT) for CAR: %4.1f (SEK/h)', cVoT);   
-  fprintf('\n(mean) Value of Time (VoT) for PT: %4.1f (SEK/h)\n', pVoT);
+  % VoT calculation
+% CAR
+if sum(ismember(Labels_fx,'car_time')) && ...
+    sum(ismember(Labels_fx,'car_cost'))
+  cartime = Fmean(ismember(Labels_fx,'car_time')); 
+  carcost = Fmean(ismember(Labels_fx,'car_cost'));
+elseif sum(ismember(Labels_rd,'car_time')) && ...
+    sum(ismember(Labels_rd,'car_cost'))
+  cartime = Bmean(ismember(Labels_rd,'car_time')); 
+  carcost = Bmean(ismember(Labels_rd,'car_cost'));
+else
+  fprintf('VoT calculation for CAR could not be performed.\nVariables%s',...
+    ' for cost and time are not both random or both fixed');
+end
+% PT
+if sum(ismember(Labels_fx,'PT_time')) && ...
+    sum(ismember(Labels_fx,'PT_cost'))
+  PTtime = Fmean(ismember(Labels_fx,'PT_time')); 
+  PTcost = Fmean(ismember(Labels_fx,'PT_cost'));
+elseif sum(ismember(Labels_rd,'PT_time')) && ...
+    sum(ismember(Labels_rd,'PT_cost'))
+  PTtime = Bmean(ismember(Labels_rd,'PT_time')); 
+  PTcost = Bmean(ismember(Labels_rd,'PT_cost'));
+else
+  fprintf('VoT calculation for PT could not be performed.\nVariables%s',...
+    ' for cost and time are not both random or both fixed');
 end
 
-  % random parameters - population params
-
-
-  
-  
-  
-  % **************+ TODO *****************
-
-
-  
-  
-
-
-
-% sigma=sqrt(diag(W));
-% tvalues = beta./sigma;  % Calculate t-values
-% 
-% F = beta(I_F); % Fixed parameters
-% tval_F = tvalues(I_F); % t-values for fixed parameters
-% B = beta(I_R);
-% tval_B = tvalues(I_R);
-% 
-% cholW = zeros(N_RD);
-% tvalues_W = zeros(N_RD);
-% 
-% cholW(idx_cov) = beta(I_W);
-% tvalues_W(idx_cov) = tvalues(I_W);
-% W = cholW*cholW';
-
-% fprintf('Random parameters - population parameters\n');
-% fprintf('%-20s : %10s %8s %14s %8s %14s\n',...
-%   'parameter','dist.','mean','t-test (mean)','stdev','t-test (stdev)');
-% for i = 1 : length(B)
-%   fprintf('%-20s : %10s %8.2f %14.2f %8.2f 14.2f\n',...
-%     Labels_rd{i},...
-%     B(i),...
-%     B(i)/sqrt(Fcovar(i,i))...
-%   );
-% end
-
-
-% fprintf('\n%-10s : %-10s %-8s %-8s %-8s %-8s \n' , ['Parameter'],['Dist.'],['Mean'],['t_mean'],['Std.'],['t_std'] );
-% for k = 1:N_RD
-%       fprintf('%-10s : %-10s %+-8.2g %-8.2g %-8.2g %-8.2g \n', LAB_RD{k} ,DIST_RD{k}, B_t(k) ,tval_B(k), sqrt(diagW(k)),diagT(k) )
-% end
-% 
-% fprintf('\n\nValue of time (VoT) for car: %4.1f (SEK/h)', cVoT);   
-% fprintf('\nValue of time (VoT) for public transit: %4.1f (SEK/h)', pVoT);
+cVoT = cartime/carcost; %VoT for car
+pVoT = PTtime/PTcost; %VoT for PT
+fprintf('\n(mean) Value of Time (VoT) for CAR: %4.1f (SEK/h)', cVoT);   
+fprintf('\n(mean) Value of Time (VoT) for PT: %4.1f (SEK/h)\n', pVoT);
