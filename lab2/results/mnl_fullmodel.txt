@@ -1,0 +1,36 @@
+Fixed parameters
+parameter            :     mean    stdev   t-test
+-------------------------------------------------
+walk_ASC             :     3.12     0.14    22.02
+walk_dist            :    -7.75     0.11   -72.33
+walk_dlt1km          :     0.70     0.06    11.13
+bike_ASC             :     1.32     0.11    11.96
+bike_dist            :    -3.14     0.07   -47.73
+bike_male            :     0.45     0.07     6.79
+bike_flext           :    -0.52     0.04   -11.87
+bike_nohhdl          :     0.47     0.06     7.78
+bike_own_drv_lic     :    -0.25     0.12    -1.99
+car_time             :    -0.26     0.02   -10.86
+car_cost             :    -0.06     0.00   -21.15
+car_parkposs         :     0.18     0.06     3.08
+car_cheappark        :     1.25     0.06    21.03
+car_compcar          :     0.86     0.10     8.88
+car_md               :     1.72     0.03    49.36
+car_male             :     0.29     0.05     5.77
+car_self_empl        :     1.13     0.07    16.79
+car_flext            :    -0.92     0.06   -14.48
+car_own_drv_lic      :    -0.17     0.08    -2.13
+PT_ASC               :     6.12     0.06   105.42
+PT_time              :    -1.50     0.11   -13.82
+PT_cost              :    -0.22     0.01   -43.77
+PT_fwt               :    -2.27     0.07   -32.99
+PT_subs              :     0.18     0.09     1.89
+PT_flext             :    -0.43     0.07    -6.34
+PT_nohhdl            :     0.10     0.03     3.01
+PT_own_drv_lic       :    -0.60     0.09    -6.66
+
+Log-likelihood: -5292.99
+
+(mean) Value of Time (VoT) for CAR:  4.3 (SEK/h)
+(mean) Value of Time (VoT) for PT:  6.8 (SEK/h)
+
