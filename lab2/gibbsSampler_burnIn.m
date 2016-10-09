@@ -18,6 +18,7 @@ totalSubplots = 1 + N_fx + N_rd; % +2 because of the acceptance rates
 
   % for plotting purposes: fixed params saved data
 FSaved = []; % the saved parameters to plot
+LLSaved = [];
 accFtotal = 0; % the acceptance rate total
 accFsaved = []; % the acceptance rate saved to plot
 
@@ -36,8 +37,10 @@ for k = 1 : draws
   
   % save the parameters
   if mod(k,saveStep) == 1
-    fprintf('draws: %5d\taccFX: %2.3f\taccRD: %2.3f\n',...
+    LL = sum(log(P));
+    fprintf('k: %5d  LL: %5.2f  accFX: %2.3f  accRD: %2.3f\n',...
       k,...
+      LL,...
       accFtotal/saveStep,...
       accRtotal/saveStep);
     accFsaved= [accFsaved,(accFtotal/saveStep)];
@@ -54,19 +57,26 @@ for k = 1 : draws
     accFtotal = 0;
     accRtotal = 0;
     FSaved = [FSaved,F];
+    LLSaved = [LLSaved,LL];
     nSaved = size(FSaved,2);
   end
   
   % plot!!
   if mod(k,plotStep) == 1
       % fixed acceptance rate
-    ax1 = subplot(4,1,1);
+    ax1 = subplot(4,2,1);
     plot([1:nSaved]*100,accFsaved);
     hline = refline(ax1,0,mean(accFsaved,2));
     hline.Color = 'r';
     ylabel('FX acc. rate','Interpreter','none');
+      % LLikelihood
+    axLL = subplot(4,2,2);
+    plot(axLL,[1:nSaved]*100,LLSaved);
+    hline = refline(axLL,0,mean(LLSaved,2));
+    hline.Color = 'r';
+    ylabel('FX Log-likelihood','Interpreter','none');
       % all fixed params
-    ax2 = subplot(4,1,[2,3,4]);
+    ax2 = subplot(4,2,[3,4,5,6,7,8]);
     hold(ax2,'on');
     ax2.ColorOrderIndex = 1;
     for i = 1 : N_fx
