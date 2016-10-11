@@ -70,13 +70,13 @@ for k = 1 : draws
 % FIXED PARAMETERS *******************************************************
       % fixed acceptance rate
     axAccFX = subplot(4,3,1);
-    plot([1:nSaved]*saveStep,accFsaved);
-    accFmean = mean(accFsaved,2);
-    if accFmean ~= 0
-      ylim([accFmean - 0.5 * accFmean, accFmean + 0.5 * accFmean]');
-    end
-    hline = refline(axAccFX,0,accFmean);
-    hline.Color = 'r';
+    plot(axAccFX,[1:nSaved]*saveStep,accFsaved);
+%     accFmean = mean(accFsaved,2);
+%     if accFmean ~= 0
+%       ylim([accFmean - 0.5 * accFmean, accFmean + 0.5 * accFmean]');
+%     end
+%     hline = refline(axAccFX,0,accFmean);
+%     hline.Color = 'r';
     ylabel('FX acc. rate','Interpreter','none');
       % all fixed params
     axParamsFX = subplot(4,3,[4,7,10]);
@@ -94,13 +94,13 @@ for k = 1 : draws
 % RANDOM PARAMETERS ******************************************************
       % random params acceptance rate
     axAccRD = subplot(4,3,2);
-    plot([1:nSaved]*saveStep,accRsaved);
-    accRmean = mean(accRsaved,2);
-    if accRmean ~= 0
-      ylim([accRmean - 0.5 * accRmean,accRmean + 0.5 * accRmean]');
-    end
-    hline = refline(axAccRD,0,accRmean);
-    hline.Color = 'r';
+    plot(axAccRD,[1:nSaved]*saveStep,accRsaved);
+%     accRmean = mean(accRsaved,2);
+%     if accRmean ~= 0
+%       ylim([accRmean - 0.5 * accRmean,accRmean + 0.5 * accRmean]');
+%     end
+%     hline = refline(axAccRD,0,accRmean);
+%     hline.Color = 'r';
     ylabel('RD acc. rate','Interpreter','none');
       % population params means
     axB = subplot(4,3,[5,8,11]);
@@ -127,13 +127,13 @@ for k = 1 : draws
 % LIKELIHOOD ***************************************************
     axLL = subplot(4,3,3);
     plot(axLL,[1:nSaved]*saveStep,LLsaved);
-    LLmean = mean(LLsaved,2);
-    if LLmean ~= 0
-      % reverse limits because LL is negative!!
-      ylim([LLmean + 0.5 * LLmean, LLmean - 0.5 * LLmean]');
-    end
-    hline = refline(axLL,0,LLmean);
-    hline.Color = 'r';
+%     LLmean = mean(LLsaved,2);
+%     if LLmean ~= 0
+%       % reverse limits because LL is negative!!
+%       ylim([LLmean + 0.5 * LLmean, LLmean - 0.5 * LLmean]');
+%     end
+%     hline = refline(axLL,0,LLmean);
+%     hline.Color = 'r';
     ylabel('Log-likelihood','Interpreter','none');
 % DRAWNOW ******************************************************
     drawnow;

@@ -52,7 +52,7 @@ P = P(CHOICEIDX);
 
 % 2. Sample the parameters using the Gibbs-MH hierarchical sampler
   % burn-in params
-Nburnin = 800000;
+Nburnin = 40 * 1000;    % ***************************************************************** BURN IN SAMPLES
 burnInSaveStep = 100;
 burnInPlotStep = 500;
 legends = 0; % boolean indicating whether to display the legends
@@ -64,7 +64,7 @@ legends = 0; % boolean indicating whether to display the legends
                           MODEL_FX,MODEL_RD,CHOICEIDX);
 
   % Gibbs sampling
-samplesToSave = 200;
+samplesToSave = 1 * 100; % **************************************************************** SAMPLES TO SAVE
 samplingSaveStep = 100;
 [samplesB,samplesW,samplesR,samplesF,samplesP] = gibbsSampler(...
                           samplingSaveStep,samplesToSave,...
@@ -74,7 +74,7 @@ samplingSaveStep = 100;
 
 % 3. Calculate means and variances of the posterior distributions
 %     and print the resulting model
-diary(sprintf('results/mixed_%s',datestr(now,'HH-MM-SS')));
+diary(sprintf('results/mixed_%s.txt',datestr(now,'HH-MM-SS')));
 diary on;
 fprintf('\n\nBurn-in draws: %6d\n',Nburnin);
 fprintf('Samples: %5d\n',samplesToSave);
