@@ -1,0 +1,48 @@
+
+
+Burn-in draws:  80000
+Samples:   200
+Sample step:   100
+
+**** **** **** **** MODEL SPECIFICATION **** **** **** ****
+Fixed parameters
+-------------------------------------------------
+parameter            :     mean    stdev   t-test
+-------------------------------------------------
+walk_dist            :    -7.81     0.33   -23.58
+bike_dist            :    -3.40     0.09   -36.40
+bike_flext           :    -0.44     0.10    -4.31
+bike_nohhdl          :     0.35     0.04     8.45
+car_cost             :    -0.06     0.00   -23.61
+car_time             :    -0.25     0.04    -6.16
+car_parkposs         :     0.25     0.07     3.38
+car_cheappark        :     1.49     0.05    30.31
+car_compcar          :     0.97     0.06    16.88
+car_md               :     2.14     0.04    49.64
+car_self_empl        :     1.07     0.08    13.50
+car_flext            :    -0.82     0.08   -10.69
+PT_time              :    -1.35     0.07   -19.94
+PT_cost              :    -0.25     0.01   -33.05
+PT_fwt               :    -2.24     0.18   -12.31
+PT_subs              :     0.24     0.07     3.24
+PT_flext             :    -0.30     0.10    -3.18
+PT_nohhdl            :     0.07     0.05     1.30
+PT_own_drv_lic       :    -0.55     0.07    -7.41
+-------------------------------------------------
+
+Random parameters - population parameters
+-------------------------------------------------------------------
+parameter            :      dist.      b   t-value      W   t-value
+-------------------------------------------------------------------
+walk_ASC             :     Normal   3.03     32.16   0.26      4.27
+walk_age             :     Normal   1.24     24.56   0.06      3.61
+bike_ASC             :     Normal   2.17     27.86   0.35      2.54
+bike_age             :     Normal   0.96     18.90   0.11      2.91
+car_age              :     Normal   1.09     41.18   0.05      5.41
+PT_ASC               :     Normal   6.93     92.54   0.05      3.74
+PT_male              :     Normal  -0.39     -6.31   0.12      4.33
+PT_age               :     Normal   1.19     64.16   0.03      7.26
+-------------------------------------------------------------------
+
+(mean) Value of Time (VoT) for CAR:  4.1 (SEK/h)
+(mean) Value of Time (VoT) for PT:  5.4 (SEK/h)

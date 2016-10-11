@@ -52,7 +52,7 @@ P = P(CHOICEIDX);
 
 % 2. Sample the parameters using the Gibbs-MH hierarchical sampler
   % burn-in params
-Nburnin = 40 * 1000;    % ***************************************************************** BURN IN SAMPLES
+Nburnin = 80 * 1000;    % ***************************************************************** BURN IN SAMPLES
 burnInSaveStep = 100;
 burnInPlotStep = 500;
 legends = 0; % boolean indicating whether to display the legends
@@ -64,7 +64,7 @@ legends = 0; % boolean indicating whether to display the legends
                           MODEL_FX,MODEL_RD,CHOICEIDX);
 
   % Gibbs sampling
-samplesToSave = 1 * 100; % **************************************************************** SAMPLES TO SAVE
+samplesToSave = 2 * 100; % **************************************************************** SAMPLES TO SAVE
 samplingSaveStep = 100;
 [samplesB,samplesW,samplesR,samplesF,samplesP] = gibbsSampler(...
                           samplingSaveStep,samplesToSave,...
@@ -120,11 +120,6 @@ for i = 1 : N_rd
   );
 end
 fprintf('-------------------------------------------------------------------\n');
-
-% performance parameters and other measures
-  % log-likelihood estimation
-LL = sum(log(mean(samplesP,2)));
-fprintf('\nLog-likelihood: %8.2f\n',LL);
 
   % VoT calculation
 % CAR

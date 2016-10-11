@@ -1,0 +1,54 @@
+
+
+Burn-in draws:  40000
+Samples:   200
+Sample step:   100
+
+**** **** **** **** MODEL SPECIFICATION **** **** **** ****
+Fixed parameters
+-------------------------------------------------
+parameter            :     mean    stdev   t-test
+-------------------------------------------------
+walk_dist            :   -48.35     1.02   -47.57
+walk_dlt1km          :     2.07     1.48     1.40
+bike_dist            :   -14.10     0.64   -22.15
+bike_flext           :    -1.40     0.52    -2.69
+bike_nohhdl          :     2.41     0.23    10.56
+bike_own_drv_lic     :     0.13     0.53     0.25
+car_parkposs         :     0.97     0.33     2.91
+car_cheappark        :     4.72     0.34    13.92
+car_compcar          :     3.83     0.54     7.03
+car_md               :     6.59     0.42    15.82
+car_self_empl        :     3.94     0.47     8.43
+car_flext            :    -2.55     0.42    -6.04
+car_own_drv_lic      :     1.18     0.77     1.54
+PT_fwt               :   -22.02     0.94   -23.47
+PT_subs              :     1.56     0.38     4.14
+PT_flext             :    -1.00     0.41    -2.43
+PT_nohhdl            :     1.26     0.17     7.23
+PT_own_drv_lic       :    -1.96     0.67    -2.95
+-------------------------------------------------
+
+Random parameters - population parameters
+-------------------------------------------------------------------
+parameter            :      dist.      b   t-value      W   t-value
+-------------------------------------------------------------------
+walk_ASC             :     Normal   9.46     26.35  20.09      2.50
+walk_male            :     Normal  -0.29     -1.18  12.29      2.63
+walk_age             :     Normal   3.77     19.26   3.74      7.23
+bike_ASC             :     Normal  -1.25     -2.53  35.58      5.22
+bike_male            :     Normal  -0.08     -0.12  34.56      6.21
+bike_age             :     Normal   2.48     10.23   3.86      7.67
+car_cost             :     Normal  -0.01     -0.56   0.02      9.36
+car_time             :     Normal -20.94    -11.19 156.63      6.51
+car_male             :     Normal   0.23      1.50   0.72      2.12
+car_age              :     Normal   2.55     30.25   0.18      6.25
+PT_time              :     Normal  -0.48     -0.98   2.86      6.29
+PT_cost              :     Normal  -1.16    -61.46   0.05      9.45
+PT_ASC               :     Normal  18.06     49.80   1.28      5.26
+PT_male              :     Normal  -0.42     -2.42   1.17      3.56
+PT_age               :     Normal   4.05     51.66   0.16      7.16
+-------------------------------------------------------------------
+
+(mean) Value of Time (VoT) for CAR: 2339.4 (SEK/h)
+(mean) Value of Time (VoT) for PT:  0.4 (SEK/h)

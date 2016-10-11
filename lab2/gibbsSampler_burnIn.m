@@ -28,6 +28,8 @@ accRsaved = []; % acceptance rate to plot
   % for plotting purposes: the log-likelihood series
 LLsaved = [];
 
+plotRows = 4;
+
 for k = 1 : draws
   % perform a Gibbs sampler round
   [B,W,R,F,P,RhoR,RhoF,acceptR,acceptF] = ...
@@ -69,17 +71,11 @@ for k = 1 : draws
   if mod(k,plotStep) == 1
 % FIXED PARAMETERS *******************************************************
       % fixed acceptance rate
-    axAccFX = subplot(4,3,1);
+    axAccFX = subplot(plotRows,3,1);
     plot(axAccFX,[1:nSaved]*saveStep,accFsaved);
-%     accFmean = mean(accFsaved,2);
-%     if accFmean ~= 0
-%       ylim([accFmean - 0.5 * accFmean, accFmean + 0.5 * accFmean]');
-%     end
-%     hline = refline(axAccFX,0,accFmean);
-%     hline.Color = 'r';
     ylabel('FX acc. rate','Interpreter','none');
       % all fixed params
-    axParamsFX = subplot(4,3,[4,7,10]);
+    axParamsFX = subplot(plotRows,3,[4,7,10]);
     hold(axParamsFX,'on');
     axParamsFX.ColorOrderIndex = 1;
     for i = 1 : N_fx
@@ -93,17 +89,11 @@ for k = 1 : draws
     hold(axParamsFX,'off');
 % RANDOM PARAMETERS ******************************************************
       % random params acceptance rate
-    axAccRD = subplot(4,3,2);
+    axAccRD = subplot(plotRows,3,2);
     plot(axAccRD,[1:nSaved]*saveStep,accRsaved);
-%     accRmean = mean(accRsaved,2);
-%     if accRmean ~= 0
-%       ylim([accRmean - 0.5 * accRmean,accRmean + 0.5 * accRmean]');
-%     end
-%     hline = refline(axAccRD,0,accRmean);
-%     hline.Color = 'r';
     ylabel('RD acc. rate','Interpreter','none');
       % population params means
-    axB = subplot(4,3,[5,8,11]);
+    axB = subplot(plotRows,3,[5,8,11]);
     hold(axB,'on');
     axB.ColorOrderIndex = 1;
     for i = 1 : N_rd
@@ -111,8 +101,8 @@ for k = 1 : draws
     end
     ylabel('RD parameters means (B)','Interpreter','none');
     hold(axB,'off');
-        % population params variances
-    axW = subplot(4,3,[6,9,12]);
+      % population params variances
+    axW = subplot(plotRows,3,[6,9,12]);
     hold(axW,'on');
     axW.ColorOrderIndex = 1;
     for i = 1 : N_rd
@@ -124,17 +114,6 @@ for k = 1 : draws
         'Interpreter','none','FontSize',6,'Location','bestoutside');  
     end
     hold(axW,'off');
-% LIKELIHOOD ***************************************************
-    axLL = subplot(4,3,3);
-    plot(axLL,[1:nSaved]*saveStep,LLsaved);
-%     LLmean = mean(LLsaved,2);
-%     if LLmean ~= 0
-%       % reverse limits because LL is negative!!
-%       ylim([LLmean + 0.5 * LLmean, LLmean - 0.5 * LLmean]');
-%     end
-%     hline = refline(axLL,0,LLmean);
-%     hline.Color = 'r';
-    ylabel('Log-likelihood','Interpreter','none');
 % DRAWNOW ******************************************************
     drawnow;
   end
