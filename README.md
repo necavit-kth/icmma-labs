@@ -1,14 +1,11 @@
 # icmma-labs
 
-This repository contains the laboratory projects for the Individual Choice Modelling and Market Analysis course, on Discrete Choice Models.
+This repository contains the laboratory projects for the Individual Choice Modelling and Market Analysis course, on Discrete Choice Models (logit, mixed logit, bayesian (MCMC) mixed and simple logit).
 
 > **NOTE:** check each of the `labX` folders to get the necessary files
 
-> **Disclaimer:** the labs are conducted using the Matlab(R) software suite.
+> **NOTE:** the labs are conducted using the Matlab(R) software suite.
 
-## Contents:
-
-* `lab1a`: *"Implementing a Discrete Choice Model"* - a basic introduction to the Logit model and its fitting, using a transport mode choice dataset.
 
 ## [LICENSE](LICENSE)
 
